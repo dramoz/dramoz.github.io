@@ -112,7 +112,7 @@ markdown: kramdown
 kramdown:
   syntax_highlighter: rouge
   line_numbers: false
-  
+
 # ------------ Jekyll Archive Options ------------------
 jekyll-archives:
   enabled: [categories, tags]

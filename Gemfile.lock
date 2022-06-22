@@ -91,6 +91,7 @@ DEPENDENCIES
   jekyll-compose
   jekyll-seo-tag
   jekyll-spaceship
+  rouge
   sass-embedded (~> 1.0)
   webrick (~> 1.7)
 
