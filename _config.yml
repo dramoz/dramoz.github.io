@@ -61,6 +61,9 @@ plugins:
   - jekyll-seo-tag
   - jekyll-spaceship
 
+sass:
+  implementation: sass-embedded
+
 # Collections
 collections:
   docs:
@@ -96,7 +99,7 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - node_modules
-  - vendor/"
+  - vendor/
   - README.md
   - LICENSE
   - Makefile
