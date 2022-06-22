@@ -17,7 +17,15 @@
   <script src="https://www.w3schools.com/lib/w3.js"></script> 
   
   <!-- Code highlight -->
-  <link href="/assets/css/highlight.css" rel="stylesheet" />
+  <!-- https://highlightjs.org/download/ -->
+  <!-- https://jojozhuang.github.io/tutorial/jekyll-highlighting/ -->
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/default.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+  <!-- Line numbers -->
+  <!-- https://github.com/wcoder/highlightjs-line-numbers.js/ -->
+  <script src="//cdn.jsdelivr.net/npm/highlightjs-line-numbers.js@2.8.0/dist/highlightjs-line-numbers.min.js"></script>
+  <script>hljs.initLineNumbersOnLoad();</script>
   
   <!--load all Font Awesome styles -->
   <link href="assets/fontawesome/css/all.css" rel="stylesheet">
