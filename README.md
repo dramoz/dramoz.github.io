@@ -1,2 +1,2 @@
 # dramoz.github.io
-My GitHub pages
+My GitHub Pages

@@ -1,0 +1,150 @@
+# Welcome to Jekyll!
+
+# jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
+# ↓ --------------------------
+
+title: Danilo Ramos, MSc, P.Eng.
+tagline: Embedded Systems Design, Tutorials, Projects and Guides
+
+description: >-                        # used by seo meta and the atom feed
+  Personal blog and website for Embedded Systems Designs
+  Tutorials, Projects with MCU, FPGAs
+
+# fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
+url: 'https://dramoz.github.io'
+logo: 'assets/img/avatar.png'
+
+github:
+  username: dramoz
+
+twitter:
+  username: dramoz1977
+
+social:
+  # Change to your full name.
+  # It will be displayed as the default author of the posts and the copyright owner in the Footer
+  name: Danilo Ramos
+  email: dramoz@gmail.com
+  links:
+    # The first element serves as the copyright owner's link
+    - https://github.com/dramoz
+    - https://community.element14.com/members/dramoz
+    - https://www.hackster.io/dramoz
+    - https://www.linkedin.com/in/dramoz
+    # Uncomment below to add more social links
+    # - https://www.facebook.com/username
+
+google_site_verification: google-site-verification=e8PlCoi0UOY5SGE60r1luNuxmYoKY_XI9va3CGm_oQg
+
+# ↑ --------------------------
+# The end of `jekyll-seo-tag` settings
+
+# ------------------------------
+# Theme settings
+lang: en
+style: mix-theme
+
+# ------------------------------
+google_analytics:
+  id:
+  # Google Analytics pageviews report settings
+  pv:
+    proxy_endpoint:
+
+# ------------------------------
+# Build settings
+# https://github.com/penibelst/jekyll-compress-html
+# https://fontawesome.com/docs/web/setup/host-yourself/webfonts4
+
+#  - jekyll-feed
+plugins:
+  - jekyll-seo-tag
+  - jekyll-spaceship
+
+# Collections
+collections:
+  docs:
+    output: true
+    permalink: /:collection/:path
+
+# Defaults
+defaults:
+  - scope:
+      path: "_docs"
+      type: "docs"
+    values:
+      layout: page
+  -
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+  -
+    scope:
+      path: "posts"
+      type: "posts"
+    values:
+      layout: "post"
+
+# ------------------------------
+# Exclude from processing.
+# Default configuration:
+#exclude: ["Gemfile", "Gemfile.lock", "node_modules", "vendor/bundle/", "vendor/cache/", "vendor/gems/", "vendor/ruby/"]
+# by default, any file/directory starting with . or _
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/"
+  - README.md
+  - LICENSE
+  - Makefile
+  - Makefile.py
+  - __pycache__
+
+# ------------------------------
+# Markdown Processors
+markdown: kramdown
+kramdown:
+  syntax_highlighter: rouge
+  line_numbers: false
+  
+# ------------ Jekyll Archive Options ------------------
+jekyll-archives:
+  enabled: [categories, tags]
+  layouts:
+    category: category
+    tag: tag
+  permalinks:
+    tag: /tags/:name/
+    category: /categories/:name/
+
+# ------------ Jekyll Compose Options ------------------
+# Add line to Gemfile
+# gem 'jekyll-compose', group: [:jekyll_plugins]
+jekyll_compose:
+  auto_open: true
+  default_front_matter:
+    drafts:
+      categories: 
+      tags: 
+      math: true
+      mermaid: true
+      image:
+        src: assests/img/title/s
+        width: 400   # in pixels
+        height: 400   # in pixels
+        alt: image alternative text
+      pin: false
+    posts:
+      categories: 
+      tags:
+      math: true
+      mermaid: true
+      image:
+        src: assests/img/title/s
+        width: 400   # in pixels
+        height: 400   # in pixels
+        alt: image alternative text
+      pin: false
