@@ -6,4 +6,6 @@
 
 table {
   @extend .w3-table-all;
+  @extend .w3-hoverable;
+  @extend .w3-card-4;
 }
