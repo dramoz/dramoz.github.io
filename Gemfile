@@ -13,6 +13,7 @@ group :jekyll_plugins do
   gem 'jekyll-seo-tag'
   #gem 'jekyll-pwa-plugin'
   gem 'jekyll-spaceship'
+  gem 'jekyll-toc'
 end
 
 # Jekyll <= 4.2.0 compatibility with Ruby 3.0

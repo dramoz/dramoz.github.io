@@ -1,4 +1,24 @@
 ---
 layout: default
 ---
-{{ content }}
+<div class="w3-container w3-padding-16 w3-border-bottom">
+  <h1>{{page.title}}</h1>
+  <h6>Author: {{page.author}}</h6>
+</div>
+<div class="w3-panel">
+  {% if page.toc %}
+  <div>
+    <details>
+      <summary>Table of Contents</summary>
+      <div id="table-of-contents">
+          {{ content | toc_only }}
+      </div>
+    </details>
+    <div id="markdown-content">
+        {{ content | inject_anchors }}
+    </div>
+  </div>
+  {% else %}
+    {{ content }}
+  {% endif %}
+</div>

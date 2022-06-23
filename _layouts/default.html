@@ -9,32 +9,30 @@
     {% include header.html %}
     {% include sidebar.html %}
     
-    <div id="main">
-      {% include top_navbar.html %}
-    
-      <!-- Page Content -->
-      <div class="w3-container">
+    <div id="main" style="margin-left: {{ site.sidebar_w }};">
+      <div class="w3-container w3-display-container">
+        <!-- Sidebar open button -->
+        <div class="w3-display-topleft">
+          <button id="openNav" class="w3-bar-item w3-button" title="open Sidebar" style="display: none;" onclick="sidebarOpen()">
+            <i class="fa-solid fa-angles-right"></i>
+          </button>
+        </div>
         
-        <!--
-        <i class="fa-solid fa-user"></i>
-        <i class="fa-brands fa-github"></i>
-        <img class="nature" src="assets/img/atrover/kv260_atrover_0001.jpg" width="100%">
-        <img class="nature" src="assets/img/atrover/kv260_atrover_0002.jpg" width="100%">
-        <img class="nature" src="assets/img/atrover/kv260_atrover_0003.jpg" width="100%">
-        <img class="nature" src="assets/img/atrover/kv260_atrover_0004.jpg" width="100%">
-        
-        <script>
-        w3.slideshow(".nature", 1500);
-        </script> 
-      -->
-        {{ content }}
+        <!-- Page Content -->
+        <div class="w3-panel w3-auto">
+          {% include top_navbar.html %}
+          
+          <div class="w3-panel ">
+            {{ content }}
+          </div>
+          
+          {% include footer.html %}
+        </div>
         
       </div>
-      
-      {% include footer.html %}
     </div>
     <script>
-      //w3_sidebar_open();
+      //sidebarOpen();
     </script>
   </body>
 </html>

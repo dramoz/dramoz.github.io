@@ -69,7 +69,7 @@ highlight_lno: true
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # ========================================================================================
 # https://www.w3schools.com/w3css/w3css_color_themes.asp
-w3_them: w3-theme-teal
+w3_theme: w3-theme-teal
 
 lang: en-CA
 
@@ -78,7 +78,7 @@ font: "Open+Sans"
 font_family: "'Open Sans', sans-serif;"
 
 # Layout
-sidebar_w: 180px
+sidebar_w: 360px
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # ---------------------------------------------------------------
@@ -92,6 +92,7 @@ sidebar_w: 180px
 plugins:
   - jekyll-seo-tag
   - jekyll-spaceship
+  - jekyll-toc
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # ---------------------------------------------------------------
@@ -217,16 +218,21 @@ defaults:
       path: "_tutorials"
       type: "tutorials"
     values:
+      author: "Danilo Ramos"
       layout: "page"
+      toc: true
   -
     scope:
       path: ""
       type: "pages"
     values:
       layout: "page"
+      author: "Danilo Ramos"
+      toc: true
   -
     scope:
       path: "posts"
       type: "posts"
     values:
       layout: "page"
+      author: "Danilo Ramos"
