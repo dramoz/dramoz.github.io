@@ -6,22 +6,35 @@
   {%- include head.html -%}
   
   <body>
-    <div class="w3-container">
+    {% include header.html %}
+    {% include sidebar.html %}
+    
+    <div id="main">
+      {% include top_navbar.html %}
+    
+      <!-- Page Content -->
+      <div class="w3-container">
+        
+        <!--
+        <i class="fa-solid fa-user"></i>
+        <i class="fa-brands fa-github"></i>
+        <img class="nature" src="assets/img/atrover/kv260_atrover_0001.jpg" width="100%">
+        <img class="nature" src="assets/img/atrover/kv260_atrover_0002.jpg" width="100%">
+        <img class="nature" src="assets/img/atrover/kv260_atrover_0003.jpg" width="100%">
+        <img class="nature" src="assets/img/atrover/kv260_atrover_0004.jpg" width="100%">
+        
+        <script>
+        w3.slideshow(".nature", 1500);
+        </script> 
+      -->
+        {{ content }}
+        
+      </div>
       
-      <i class="fa-solid fa-user"></i>
-      <i class="fa-brands fa-github"></i>
-    <!--
-      <img class="nature" src="assets/img/atrover/kv260_atrover_0001.jpg" width="100%">
-      <img class="nature" src="assets/img/atrover/kv260_atrover_0002.jpg" width="100%">
-      <img class="nature" src="assets/img/atrover/kv260_atrover_0003.jpg" width="100%">
-      <img class="nature" src="assets/img/atrover/kv260_atrover_0004.jpg" width="100%">
-      
-      <script>
-      w3.slideshow(".nature", 1500);
-      </script> 
-    -->
-      {{ content }}
-      
+      {% include footer.html %}
     </div>
+    <script>
+      //w3_sidebar_open();
+    </script>
   </body>
 </html>

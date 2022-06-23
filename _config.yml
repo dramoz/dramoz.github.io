@@ -66,17 +66,17 @@ sass:
 
 # Collections
 collections:
-  docs:
+  tutorials:
     output: true
     permalink: /:collection/:path
 
 # Defaults
 defaults:
   - scope:
-      path: "_docs"
-      type: "docs"
+      path: "_tutorials"
+      type: "tutorials"
     values:
-      layout: page
+      layout: "page"
   -
     scope:
       path: ""
@@ -88,7 +88,7 @@ defaults:
       path: "posts"
       type: "posts"
     values:
-      layout: "post"
+      layout: "page"
 
 # ------------------------------
 # Exclude from processing.

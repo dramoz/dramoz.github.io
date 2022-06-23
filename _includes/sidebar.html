@@ -1,0 +1,23 @@
+<!-- Sidebar -->
+<div class="w3-sidebar w3-bar-block w3-card w3-animate-left" style="display:none" id="mySidebar">
+  <button class="w3-bar-item w3-button w3-large w3-dark-grey" onclick=" w3_sidebar_close()">Content &times;</button>
+  
+  {% for post in site.documents %}
+    <a href="{{ post.url }}" class="w3-bar-item w3-button">{{ post.title }}</a>
+  {% endfor %}
+</div>
+
+<!-- Sidebar scripts -->
+<script>
+  function w3_sidebar_open() {
+    document.getElementById("main").style.marginLeft = "25%";
+    document.getElementById("mySidebar").style.width = "25%";
+    document.getElementById("mySidebar").style.display = "block";
+    document.getElementById("openNav").style.display = 'none';
+  }
+  function w3_sidebar_close() {
+    document.getElementById("main").style.marginLeft = "0%";
+    document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("openNav").style.display = "inline-block";
+  }
+</script>
