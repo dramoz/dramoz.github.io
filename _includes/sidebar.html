@@ -14,9 +14,7 @@
   
   <div id="TOC" class="sidebar" style="display:block">
     <p>Table of Contents</p>
-    <div id="table-of-contents-sidebar">
-      {{ content | toc_only }}
-    </div>
+    {% include toc.html html=content %}
   </div>
   
   <div id="SiteMap" class="sidebar" style="display:none">

@@ -86,13 +86,15 @@ sidebar_w: 360px
 # ---------------------------------------------------------------
 # https://github.com/jekyll/jekyll-seo-tag
 # https://github.com/jeffreytse/jekyll-spaceship
-# https://github.com/toshimaru/jekyll-toc
+# -> not used https://github.com/toshimaru/jekyll-toc
+# https://github.com/allejo/jekyll-toc
 # ---------------------------------------------------------------
 #  - jekyll-feed
 plugins:
   - jekyll-seo-tag
   - jekyll-spaceship
-  - jekyll-toc
+
+#  - jekyll-toc
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # ---------------------------------------------------------------
