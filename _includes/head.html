@@ -7,13 +7,13 @@
     {{ site.title }}
   </title>
   
-  <!-- <title> {{ site.title }} </title> -->
   <!-- https://github.com/jekyll/jekyll-seo-tag -->
   {%- seo -%}
   
   <!-- W3.css -->
   <link rel="stylesheet" href="{{ "/assets/css/style.css" | absolute_url }}">
   <!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
+  <link rel="stylesheet" href="https://www.w3schools.com/lib/{{ site.w3_theme }}.css">
   <script src="https://www.w3schools.com/lib/w3.js"></script> 
   
   <!-- Select the font -->
@@ -27,14 +27,15 @@
   <!-- Code highlight -->
   <!-- https://highlightjs.org/download/ -->
   <!-- https://jojozhuang.github.io/tutorial/jekyll-highlighting/ -->
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/default.min.css">
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
-  <script>hljs.highlightAll();</script>
-  <!-- Line numbers -->
-  <!-- https://github.com/wcoder/highlightjs-line-numbers.js/ -->
-  <script src="//cdn.jsdelivr.net/npm/highlightjs-line-numbers.js@2.8.0/dist/highlightjs-line-numbers.min.js"></script>
-  <script>hljs.initLineNumbersOnLoad();</script>
-  
+  {% if site.highlightjs == true %}
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    <!-- Line numbers -->
+    <!-- https://github.com/wcoder/highlightjs-line-numbers.js/ -->
+    <script src="//cdn.jsdelivr.net/npm/highlightjs-line-numbers.js@2.8.0/dist/highlightjs-line-numbers.min.js"></script>
+    <script>hljs.initLineNumbersOnLoad();</script>
+  {% endif %}
   <!--load all Font Awesome styles -->
   <link href="/assets/fontawesome/css/all.css" rel="stylesheet">
   

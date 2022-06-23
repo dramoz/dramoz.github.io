@@ -1,8 +1,104 @@
+# ========================================================================================
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Welcome to Jekyll!
+# ----------------------------------------------------------------
+# Site settings
+# ----------------------------------------------------------------
+# References: not included elsewhere, otherwise check each section
+# ----------------------------------------------------------------
+# https://www.w3schools.com/w3css/default.asp
+# https://fontawesome.com/docs/web/setup/host-yourself/webfonts4
+# https://realfavicongenerator.net/
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# ========================================================================================
 
-# jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
-# ↓ --------------------------
+# ========================================================================================
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Jekyll settings
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# ========================================================================================
 
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# ---------------------------------------------------------------
+# This site requires sass-embedded
+# https://github.com/jekyll/jekyll-sass-converter#sass-embedded
+# ---------------------------------------------------------------
+sass:
+  implementation: sass-embedded
+  style: compressed
+# ---------------------------------------------------------------
+
+# ---------------------------------------------------------------
+# Exclude from processing:
+# ---------------------------------------------------------------
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/
+  - README.md
+  - LICENSE
+  - Makefile
+  - Makefile.py
+  - __pycache__
+
+# ---------------------------------------------------------------
+# Markdown Processors
+# ---------------------------------------------------------------
+markdown: kramdown
+kramdown:
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    block:
+      line_numbers: false
+# ---------------------------------------------------------------
+# Code highlight
+# ---------------------------------------------------------------
+# https://highlightjs.org/download/
+# https://jojozhuang.github.io/tutorial/jekyll-highlighting/
+# https://github.com/wcoder/highlightjs-line-numbers.js/
+# ---------------------------------------------------------------
+highlightjs: false
+highlight_lno: true
+# ---------------------------------------------------------------
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+# ========================================================================================
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Site settings
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# ========================================================================================
+# https://www.w3schools.com/w3css/w3css_color_themes.asp
+w3_them: w3-theme-teal
+
+lang: en-CA
+
+# https://fonts.google.com/
+font: "Open+Sans"
+font_family: "'Open Sans', sans-serif;"
+
+# Layout
+sidebar_w: 180px
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# ---------------------------------------------------------------
+# Plugins
+# ---------------------------------------------------------------
+# https://github.com/jekyll/jekyll-seo-tag
+# https://github.com/jeffreytse/jekyll-spaceship
+# https://github.com/toshimaru/jekyll-toc
+# ---------------------------------------------------------------
+#  - jekyll-feed
+plugins:
+  - jekyll-seo-tag
+  - jekyll-spaceship
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# ---------------------------------------------------------------
+# jekyll-seo-tag settings (plugin, but uses common jeckyll variables)
+# ---------------------------------------------------------------
+# https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
+# ---------------------------------------------------------------
 title: Danilo Ramos, MSc, P.Eng.
 tagline: Embedded Systems Design, Tutorials, Projects and Guides
 
@@ -35,84 +131,34 @@ social:
     # - https://www.facebook.com/username
 
 google_site_verification: google-site-verification=e8PlCoi0UOY5SGE60r1luNuxmYoKY_XI9va3CGm_oQg
+# ---------------------------------------------------------------
 
-# ↑ --------------------------
-# The end of `jekyll-seo-tag` settings
-
-# ------------------------------
-# Theme settings
-lang: en
-style: mix-theme
-
-# ------------------------------
+# ---------------------------------------------------------------
+# Google Analytics
+# ---------------------------------------------------------------
+# https://desiredpersona.com/google-analytics-jekyll/
+# ---------------------------------------------------------------
 google_analytics:
   id:
   # Google Analytics pageviews report settings
   pv:
     proxy_endpoint:
+# ---------------------------------------------------------------
 
-# ------------------------------
-# Build settings
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# ---------------------------------------------------------------
 # https://github.com/penibelst/jekyll-compress-html
-# https://fontawesome.com/docs/web/setup/host-yourself/webfonts4
+# ---------------------------------------------------------------
+compress_html:
+  clippings: all
+  comments: ["<!-- ", " -->"]
+  endings: all
+  ignore:
+    envs: [local, development]
+  blanklines: false
+  profile: false
 
-#  - jekyll-feed
-plugins:
-  - jekyll-seo-tag
-  - jekyll-spaceship
-
-sass:
-  implementation: sass-embedded
-
-# Collections
-collections:
-  tutorials:
-    output: true
-    permalink: /:collection/:path
-
-# Defaults
-defaults:
-  - scope:
-      path: "_tutorials"
-      type: "tutorials"
-    values:
-      layout: "page"
-  -
-    scope:
-      path: ""
-      type: "pages"
-    values:
-      layout: "page"
-  -
-    scope:
-      path: "posts"
-      type: "posts"
-    values:
-      layout: "page"
-
-# ------------------------------
-# Exclude from processing.
-# Default configuration:
-#exclude: ["Gemfile", "Gemfile.lock", "node_modules", "vendor/bundle/", "vendor/cache/", "vendor/gems/", "vendor/ruby/"]
-# by default, any file/directory starting with . or _
-exclude:
-  - Gemfile
-  - Gemfile.lock
-  - node_modules
-  - vendor/
-  - README.md
-  - LICENSE
-  - Makefile
-  - Makefile.py
-  - __pycache__
-
-# ------------------------------
-# Markdown Processors
-markdown: kramdown
-kramdown:
-  syntax_highlighter: rouge
-  line_numbers: false
-
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # ------------ Jekyll Archive Options ------------------
 jekyll-archives:
   enabled: [categories, tags]
@@ -123,6 +169,7 @@ jekyll-archives:
     tag: /tags/:name/
     category: /categories/:name/
 
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # ------------ Jekyll Compose Options ------------------
 # Add line to Gemfile
 # gem 'jekyll-compose', group: [:jekyll_plugins]
@@ -151,3 +198,35 @@ jekyll_compose:
         height: 400   # in pixels
         alt: image alternative text
       pin: false
+
+# ========================================================================================
+# User settings
+# ========================================================================================
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# ---------------------------------------------------------------
+# Collections
+# ---------------------------------------------------------------
+collections:
+  tutorials:
+    output: true
+    permalink: /:collection/:path
+
+# Defaults
+defaults:
+  - scope:
+      path: "_tutorials"
+      type: "tutorials"
+    values:
+      layout: "page"
+  -
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+  -
+    scope:
+      path: "posts"
+      type: "posts"
+    values:
+      layout: "page"
