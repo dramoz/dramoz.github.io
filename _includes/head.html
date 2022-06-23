@@ -16,6 +16,14 @@
   <!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
   <script src="https://www.w3schools.com/lib/w3.js"></script> 
   
+  <!-- Select the font -->
+  <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto"> -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans">
+  <style>
+    /* body,h1,h2,h3,h4,h5,h6 {font-family: Noto, sans-serif;} */
+    body,h1,h2,h3,h4,h5,h6 {font-family: 'Open Sans', sans-serif;}
+  </style>
+  
   <!-- Code highlight -->
   <!-- https://highlightjs.org/download/ -->
   <!-- https://jojozhuang.github.io/tutorial/jekyll-highlighting/ -->
@@ -37,9 +45,5 @@
   {%- if jekyll.environment == 'production' and site.google_analytics -%}
     {%- include google-analytics.html -%}
   {%- endif -%}
-  
-  <style>
-  </style>
-  <script src=""></script>
   
 </head>

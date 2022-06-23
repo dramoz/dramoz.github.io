@@ -7,5 +7,21 @@
 table {
   @extend .w3-table-all;
   @extend .w3-hoverable;
-  @extend .w3-card-4;
+//  @extend .w3-card-4;
+}
+
+code {
+  font-size: 12px;
+}
+
+blockquote {
+  @extend .w3-panel;
+  @extend .w3-leftbar;
+  @extend .w3-light-grey;
+  font-style: italic;
+}
+
+ul {
+  @extend .w3-ul;
+  @extend .w3-hoverable;
 }

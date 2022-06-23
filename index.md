@@ -9,6 +9,8 @@ title: Embedded Systems Design Projects, Guides and Tutorials
 
 ## Headings
 
+> A quote...
+
 ### H3
 
 #### H4
