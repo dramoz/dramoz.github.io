@@ -12,14 +12,18 @@
     </button>
   </div>
   
-  <div id="TOC" class="sidebar" style="display:block">
-    <p>Table of Contents</p>
-    {% include toc.html html=content %}
+  <div id="TOC" class="sidebar_sel toc_sidebar" class="w3-bar-block" style="display:block">
+    <div class="w3-bar-item w3-green">
+      {{ page.title }}
+    </div>
+    <div class="w3-bar-item">
+      {% include toc.html html=content %}
+    </div>
   </div>
   
-  <div id="SiteMap" class="sidebar" style="display:none">
+  <div id="SiteMap" class="sidebar_sel sitemap_sidebar" style="display:none">
     {% for post in site.documents %}
-      <a href="{{ post.url }}" class="w3-bar-item w3-button">{{ post.title }}</a>
+      <a href="{{ post.url }}" class="w3-button">{{ post.title }}</a>
     {% endfor %}
   </div>
   
@@ -40,7 +44,7 @@
   }
   function selectSidebarOption(sidebarOption) {
     var i;
-    var x = document.getElementsByClassName("sidebar");
+    var x = document.getElementsByClassName("sidebar_sel");
     for (i = 0; i < x.length; i++) {
       x[i].style.display = "none";
     }

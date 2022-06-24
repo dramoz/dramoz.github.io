@@ -46,20 +46,33 @@ exclude:
 # Markdown Processors
 # ---------------------------------------------------------------
 markdown: kramdown
-kramdown:
-  syntax_highlighter: rouge
-  syntax_highlighter_opts:
-    block:
-      line_numbers: false
+#kramdown:
+#  syntax_highlighter: rouge
+#  syntax_highlighter_opts:
+#    block:
+#      line_numbers: false
+
+#kramdown:
+#  syntax_highlighter: coderay
+#  syntax_highlighter_opts:
+#    line_numbers: false
+
 # ---------------------------------------------------------------
-# Code highlight
+# Code highlight-js
 # ---------------------------------------------------------------
 # https://highlightjs.org/download/
 # https://jojozhuang.github.io/tutorial/jekyll-highlighting/
 # https://github.com/wcoder/highlightjs-line-numbers.js/
+# Styles:
+#  https://highlightjs.org/static/demo/ (with inspect website, copy .css urls)
 # ---------------------------------------------------------------
-highlightjs: false
-highlight_lno: true
+highlightjs: true
+highlight_lno: false
+#highlightjs_theme: //cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/default.min.css
+highlightjs_theme: https://highlightjs.org/static/demo/styles/atom-one-dark-reasonable.css
+kramdown:
+    syntax_highlighter_opts:
+      disable: true
 # ---------------------------------------------------------------
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -86,15 +99,12 @@ sidebar_w: 360px
 # ---------------------------------------------------------------
 # https://github.com/jekyll/jekyll-seo-tag
 # https://github.com/jeffreytse/jekyll-spaceship
-# -> not used https://github.com/toshimaru/jekyll-toc
 # https://github.com/allejo/jekyll-toc
 # ---------------------------------------------------------------
 #  - jekyll-feed
 plugins:
   - jekyll-seo-tag
   - jekyll-spaceship
-
-#  - jekyll-toc
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # ---------------------------------------------------------------

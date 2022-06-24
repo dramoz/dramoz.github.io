@@ -9,6 +9,7 @@ group :jekyll_plugins do
   gem 'jekyll'
   gem 'sass-embedded', '~> 1.0'
   gem 'rouge'  # highlither for kramdwown
+  gem 'kramdown-syntax-coderay'
   gem 'jekyll-compose'
   gem 'jekyll-seo-tag'
   #gem 'jekyll-pwa-plugin'

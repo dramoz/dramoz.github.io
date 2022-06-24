@@ -29,7 +29,7 @@
   <!-- https://highlightjs.org/download/ -->
   <!-- https://jojozhuang.github.io/tutorial/jekyll-highlighting/ -->
   {% if site.highlightjs == true %}
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/default.min.css">
+    <link rel="stylesheet" href="{{ site.highlightjs_theme }}">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
     <script>hljs.highlightAll();</script>
     <!-- Line numbers -->

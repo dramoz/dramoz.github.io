@@ -5,16 +5,14 @@
 
 {% if site.highlightjs == false %}
 @forward "highlight";
+{% else %}
+@forward "highlightjs";
 {% endif %}
 
-table {
+table:not(.hljs-ln) {
   @extend .w3-table-all;
   @extend .w3-hoverable;
 //  @extend .w3-card-4;
-}
-
-code {
-  font-size: 12px;
 }
 
 blockquote {
@@ -24,18 +22,64 @@ blockquote {
   font-style: italic;
 }
 
-ul {
-  @extend .w3-ul;
-  @extend .w3-hoverable;
+// TOC
+$a-tags: 'a, a:link, a:visited, a:hover, a:active';
+$a-tags-hover: 'a:hover';
+$a-tags-active: 'a:active';
+.toc_sidebar {
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    margin-left: 6px;
+  }
+  p {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+  }
+  #{$a-tags} {
+    text-decoration: none;
+  }
+  #{$a-tags-hover} {
+    color: blue;
+    font-weight: bold;
+    font-variant: small-caps;
+    font-size: 1.1em;
+  }
+  #{$a-tags-active} {
+    color: green;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 0.9em;
+  }
 }
 
-// TOC
-.section-nav {
-  background-color: #fff;
-  margin: 5px 0;
-  padding: 10px 30px;
-  border: 1px solid #e8e8e8;
-  border-radius: 3px;
+.toc_inline {
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    margin-left: 6px;
+  }
+  summary {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: left;
+  }
+  #{$a-tags} {
+    text-decoration: none;
+  }
+  #{$a-tags-hover} {
+    color: blue;
+    font-weight: bold;
+    font-variant: small-caps;
+    font-size: 1.1em;
+  }
+  #{$a-tags-active} {
+    color: green;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 0.9em;
+  }
 }
 
 // Hack to fix TOC section links with fixed top navbars
