@@ -1,6 +1,6 @@
 <!-- Sidebar -->
-<div class="w3-sidebar w3-light-grey w3-card-4 w3-animate-left" style="width: {{ site.sidebar_w }}; display: block;" id="mySidebar">
-  <div class="w3-bar w3-dark-grey">
+<div class="w3-sidebar w3-theme-d2 w3-card-4 w3-animate-left" style="width: {{ site.sidebar_w }}; display: block;" id="mySidebar">
+  <div class="w3-bar w3-theme-dark">
     <button class="w3-bar-item w3-button" onclick="selectSidebarOption('TOC')"  title="table of contents">
       <i class="fa-solid fa-table-list"></i>
     </button>
@@ -13,10 +13,10 @@
   </div>
   
   <div id="TOC" class="sidebar_sel toc_sidebar" class="w3-bar-block" style="display:block">
-    <div class="w3-bar-item w3-green">
+    <div class="w3-bar-item w3-theme-d3 w3-card">
       {{ page.title }}
     </div>
-    <div class="w3-bar-item">
+    <div class="w3-bar-item w3-padding-16 w3-theme-d2">
       {% include toc.html html=content %}
     </div>
   </div>

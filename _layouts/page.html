@@ -1,15 +1,19 @@
 ---
 layout: default
 ---
-<div class="w3-container w3-padding-16 w3-border-bottom">
-  <p>{{page.title}}</p>
-  <p>Author: {{page.author}}</p>
+<div class="w3-container w3-padding-16">
+  <div style="width:80%">
+    <div class="w3-padding" style="text-align: right;">
+      <h1 class="no_toc w3-text-theme" style="font-weight: bold;">{{page.title}}</h1>
+      <h4 class="no_toc" style="font-style: italic;">Author: {{page.author}}</p>
+    </div>
+  </div>
 </div>
 <div class="w3-panel">
   {% if page.toc %}
     <div class="w3-panel w3-border-top w3-border-bottom">
       <details>
-        <summary>Table of Contents</summary>
+        <summary class="w3-text-theme">Table of Contents</summary>
         <div id="TOC-inline" class="toc_inline">
           {% include toc.html html=content %}
         </div>

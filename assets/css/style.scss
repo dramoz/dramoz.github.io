@@ -2,6 +2,7 @@
 # Only the main Sass file needs front matter (the dashes are enough)
 ---
 @forward "w3";
+@forward "w3-theme";
 
 {% if site.highlightjs == false %}
 @forward "highlight";
@@ -33,14 +34,10 @@ $a-tags-active: 'a:active';
     padding: 0;
     margin-left: 6px;
   }
-  p {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    text-align: center;
-  }
   #{$a-tags} {
     text-decoration: none;
   }
-  #{$a-tags-hover} {
+  /*#{$a-tags-hover} {
     color: blue;
     font-weight: bold;
     font-variant: small-caps;
@@ -51,6 +48,11 @@ $a-tags-active: 'a:active';
     font-style: italic;
     font-weight: bold;
     font-size: 0.9em;
+  }*/
+  #{$a-tags-hover} {
+    @extend .w3-hover-theme, :hover;
+    //@extend .w3-hover-text-theme, :hover;
+    //@extend .w3-hover-border-theme, :hover;
   }
 }
 
@@ -61,24 +63,14 @@ $a-tags-active: 'a:active';
     padding: 0;
     margin-left: 6px;
   }
-  summary {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    text-align: left;
-  }
   #{$a-tags} {
     text-decoration: none;
+    color: darkgray;
   }
   #{$a-tags-hover} {
-    color: blue;
-    font-weight: bold;
-    font-variant: small-caps;
-    font-size: 1.1em;
-  }
-  #{$a-tags-active} {
-    color: green;
-    font-style: italic;
-    font-weight: bold;
-    font-size: 0.9em;
+    //@extend .w3-hover-theme, :hover;
+    @extend .w3-hover-text-theme, :hover;
+    //@extend .w3-hover-border-theme, :hover;
   }
 }
 

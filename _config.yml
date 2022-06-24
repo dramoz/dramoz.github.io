@@ -82,7 +82,7 @@ kramdown:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # ========================================================================================
 # https://www.w3schools.com/w3css/w3css_color_themes.asp
-w3_theme: w3-theme-teal
+w3_theme: https://www.w3schools.com/lib/w3-theme-teal.css
 
 lang: en-CA
 
