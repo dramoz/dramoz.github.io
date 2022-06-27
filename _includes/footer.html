@@ -1,4 +1,6 @@
 <!-- Footer -->
+{% capture author %}{{ page.author | default: site.social.name }}{% endcapture %}
+{% capture author_about %}{{ page.about_link | default: site.social.links[0] }}{% endcapture %}
 <div class="w3-bottom">
   <div class="w3-bar w3-theme-l4">
     <a href="#" class="w3-bar-item w3-button" title="top">
@@ -7,8 +9,8 @@
     <a href="#" class="w3-bar-item w3-button" title="about">
       <i class="fa-solid fa-address-card"></i>
     </button>
-    <a href="#" class="w3-bar-item w3-button">
-      <i class="fa-regular fa-copyright"></i>Copyright {{ "now" | date: "%Y" }} - {{ page.author }}
+    <a href="{{ site.author_about }}" class="w3-bar-item w3-button">
+      <i class="fa-regular fa-copyright"></i> Copyright {{ "now" | date: "%Y" }} - {{ page.author }}
     </a>
   </div>
 </div>
