@@ -12,7 +12,14 @@
     </button>
   </div>
   
-  <div id="TOC" class="sidebar_sel toc_sidebar" class="w3-bar-block" style="display:block">
+  {% if page.toc %}
+    {% assign display_toc = "display:block" %}
+    {% assign display_sitemap = "display:none" %}
+  {% else %}
+    {% assign display_toc = "display:none" %}
+    {% assign display_sitemap = "display:block" %}
+  {% endif %}
+  <div id="TOC" class="sidebar_sel toc_sidebar" class="w3-bar-block" style={{ display_toc }}>
     <div class="w3-bar-item w3-theme-d3 w3-card">
       {{ page.title }}
     </div>
@@ -21,7 +28,7 @@
     </div>
   </div>
   
-  <div id="SiteMap" class="sidebar_sel sitemap_sidebar" style="display:none">
+  <div id="SiteMap" class="sidebar_sel sitemap_sidebar" style={{ display_sitemap }}>
     {% for post in site.documents %}
       <a href="{{ post.url }}" class="w3-button">{{ post.title }}</a>
     {% endfor %}
