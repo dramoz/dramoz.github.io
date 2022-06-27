@@ -87,8 +87,8 @@ w3_theme: https://www.w3schools.com/lib/w3-theme-teal.css
 lang: en-CA
 
 # https://fonts.google.com/
-font: "Open+Sans"
-font_family: "'Open Sans', sans-serif;"
+google_font: https://fonts.googleapis.com/css2?family=Open+Sans
+google_font_family: "'Open Sans', sans-serif;"
 
 # Layout
 sidebar_w: 360px
@@ -106,6 +106,45 @@ plugins:
   - jekyll-seo-tag
   - jekyll-spaceship
 
+# ---------------------------------------------------------------
+# Google Analytics
+# ---------------------------------------------------------------
+# https://desiredpersona.com/google-analytics-jekyll/
+# ---------------------------------------------------------------
+google_analytics:
+  id:
+  # Google Analytics pageviews report settings
+  pv:
+    proxy_endpoint:
+# ---------------------------------------------------------------
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# ---------------------------------------------------------------
+# https://github.com/penibelst/jekyll-compress-html
+# ---------------------------------------------------------------
+compress_html:
+  clippings: all
+  comments: ["<!-- ", " -->"]
+  endings: all
+  ignore:
+    envs: [local, development]
+  blanklines: false
+  profile: false
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# ------------ Jekyll Archive Options ------------------
+jekyll-archives:
+  enabled: [categories, tags]
+  layouts:
+    category: category
+    tag: tag
+  permalinks:
+    tag: /tags/:name/
+    category: /categories/:name/
+
+# ========================================================================================
+# User settings
+# ========================================================================================
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # ---------------------------------------------------------------
 # jekyll-seo-tag settings (plugin, but uses common jeckyll variables)
@@ -146,81 +185,20 @@ social:
 google_site_verification: google-site-verification=e8PlCoi0UOY5SGE60r1luNuxmYoKY_XI9va3CGm_oQg
 # ---------------------------------------------------------------
 
-# ---------------------------------------------------------------
-# Google Analytics
-# ---------------------------------------------------------------
-# https://desiredpersona.com/google-analytics-jekyll/
-# ---------------------------------------------------------------
-google_analytics:
-  id:
-  # Google Analytics pageviews report settings
-  pv:
-    proxy_endpoint:
-# ---------------------------------------------------------------
-
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-# ---------------------------------------------------------------
-# https://github.com/penibelst/jekyll-compress-html
-# ---------------------------------------------------------------
-compress_html:
-  clippings: all
-  comments: ["<!-- ", " -->"]
-  endings: all
-  ignore:
-    envs: [local, development]
-  blanklines: false
-  profile: false
-
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-# ------------ Jekyll Archive Options ------------------
-jekyll-archives:
-  enabled: [categories, tags]
-  layouts:
-    category: category
-    tag: tag
-  permalinks:
-    tag: /tags/:name/
-    category: /categories/:name/
-
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-# ------------ Jekyll Compose Options ------------------
-# Add line to Gemfile
-# gem 'jekyll-compose', group: [:jekyll_plugins]
-jekyll_compose:
-  auto_open: true
-  default_front_matter:
-    drafts:
-      categories: 
-      tags: 
-      math: true
-      mermaid: true
-      image:
-        src: assests/img/title/s
-        width: 400   # in pixels
-        height: 400   # in pixels
-        alt: image alternative text
-      pin: false
-    posts:
-      categories: 
-      tags:
-      math: true
-      mermaid: true
-      image:
-        src: assests/img/title/s
-        width: 400   # in pixels
-        height: 400   # in pixels
-        alt: image alternative text
-      pin: false
-
-# ========================================================================================
-# User settings
-# ========================================================================================
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # ---------------------------------------------------------------
 # Collections
 # ---------------------------------------------------------------
 collections:
+  blogs:
+    output: true
+    permalink: /:collection/:path
+  
   tutorials:
+    output: true
+    permalink: /:collection/:path
+  
+  projects:
     output: true
     permalink: /:collection/:path
 
@@ -243,8 +221,27 @@ defaults:
       toc: true
   -
     scope:
-      path: "posts"
+      path: "_posts"
       type: "posts"
     values:
       layout: "page"
       author: "Danilo Ramos"
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# ------------ Jekyll Compose Options ------------------
+# Add line to Gemfile
+# gem 'jekyll-compose', group: [:jekyll_plugins]
+jekyll_compose:
+  auto_open: true
+  default_front_matter:
+    posts:
+      categories: 
+      tags:
+      math: true
+      mermaid: true
+      image:
+        src: assests/img/title/s
+        width: 400   # in pixels
+        height: 400   # in pixels
+        alt: image alternative text
+      pin: false
