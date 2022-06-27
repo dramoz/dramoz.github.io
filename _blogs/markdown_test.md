@@ -1,6 +1,6 @@
 ---
-layout: page
 title: Markdown Style Test & Cheatsheet
+date: 2022-06-01
 ---
 
 # GitHub Markdown test

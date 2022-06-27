@@ -1,7 +1,7 @@
 ---
 title: Workstation requirements
 tags: ["tools", "hw", "setup"]
-pin: false
+date: 2022-06-27
 ---
 
 

@@ -204,28 +204,22 @@ collections:
 
 # Defaults
 defaults:
-  - scope:
-      path: "_tutorials"
-      type: "tutorials"
-    values:
-      author: "Danilo Ramos"
-      layout: "page"
-      toc: true
   -
     scope:
       path: ""
-      type: "pages"
     values:
       layout: "page"
-      author: "Danilo Ramos"
+    
+  -
+    scope:
+      path: "_tutorials"
+    values:
       toc: true
   -
     scope:
-      path: "_posts"
-      type: "posts"
+      path: "_blogs"
     values:
-      layout: "page"
-      author: "Danilo Ramos"
+      toc: true
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # ------------ Jekyll Compose Options ------------------
