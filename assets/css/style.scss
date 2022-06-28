@@ -23,6 +23,16 @@ blockquote {
   font-style: italic;
 }
 
+// Sidebar logo
+.sidebar_logo {
+  display: block;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 66%;
+}
+
 // TOC
 $a-tags: 'a, a:link, a:visited, a:hover, a:active';
 $a-tags-hover: 'a:hover';

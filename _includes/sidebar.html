@@ -29,7 +29,13 @@
   </div>
   
   <div id="SiteMap" class="sidebar_sel sitemap_sidebar" style={{ display_sitemap }}>
-    
+    <div class="sidebar_logo">
+      <a href="{{ '/' | relative_url }}" style="text-decoration: none;">
+        <img src="{{ site.logo | relative_url }}" alt="logo" onerror="this.style.display='none'" class="sidebar_logo">
+        <div style="text-align: center;">{{ site.title }}</div>
+        <div class="w3-small" style="text-align: center; font-style: italic;">{{ site.tagline }}</div>
+      </a>
+    </div>
     {% for collection in site.collections %}
       {% if collection.label != "posts" %}
         {% assign id = collection.label %}
@@ -39,13 +45,14 @@
         
         <div id="{{ id }}" class="w3-container w3-hide">
           {% for post in collection.docs %}
-            <a href="{{ post.url }}" class="w3-button {% if post.url == site.url %} active {% endif %}">{{ post.title }}</a>
+            <a href="{{ post.url }}" class="w3-button {% if post.url == site.url %} active {% endif %}" style="text-overflow: wrap;">
+              {{ post.title }}
+            </a>
           {% endfor %}
         </div>
       {% endif %}
     {% endfor %}
   </div>
-  
 </div>
 
 <!-- Sidebar scripts -->
