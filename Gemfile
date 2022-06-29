@@ -17,6 +17,7 @@ group :jekyll_plugins do
   gem 'jekyll-titles-from-headings'
   #gem 'jekyll-archives'
   gem 'jekyll-glossary_tooltip'
+  gem "jekyll-last-modified-at"
 end
 
 # Jekyll <= 4.2.0 compatibility with Ruby 3.0

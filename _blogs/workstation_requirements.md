@@ -3,7 +3,7 @@ title: Workstation Requirements
 tags: ["tools", "hw", "setup"]
 unsplash: 95YRwf6CNw8
 unsplash_fit: none
-date: 2022-06-27
+posted: 2022-06-27
 ---
 
 # What hardware do I Need?

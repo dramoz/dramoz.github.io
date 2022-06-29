@@ -109,6 +109,7 @@ plugins:
   - jekyll-spaceship
   - jekyll-titles-from-headings
   - jekyll-glossary_tooltip
+  - jekyll-last-modified-at
 
 # ---------------------------------------------------------------
 # https://github.com/jekyll/jekyll-archives
@@ -233,7 +234,7 @@ defaults:
     values:
       layout: "page"
       unsplash_fit: none
-      date_fmt: "%b%e%Y"
+      date_fmt: "%b %e, %Y"
   -
     scope:
       path: "_tutorials"

@@ -25,12 +25,12 @@ layout: default
               by {{ author }}
             {% endif %}
           </h4>
-          {% if page.date %}
-            <h6 class="no_toc" style = "font-size: 0.9em; font-style: normal; color:gray;">
-              <span>Posted: {{ page.date | date: "%b %e, %Y" }}</span>
-              <span> · Updated:</span>
+          <h6 class="no_toc" style = "font-size: 0.9em; font-style: normal; color:gray;">
+            {% if page.posted %}
+              <span>Posted: {{ page.posted | date: page.date_fmt }} · Updated: </span>
+            {% endif %}
+              <span>{{ page.last_modified_at | date: page.date_fmt }}</span>
             </h6>
-          {% endif %}
       {% if page.icon %}
         </div>
       </div>
