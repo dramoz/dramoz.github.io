@@ -10,10 +10,15 @@ layout: default
       {% if page.unsplash %}
         <img src="https://source.unsplash.com/{{ page.unsplash }}" alt="unsplash picture"  onerror="this.style.display='none'" class="page_unsplash">
       {% endif %}
-      {% if page.icon %}
+      {% if page.icon or page.favicon %}
       <div class="w3-bar" style="float: right;">
         <div class="w3-bar-item">
-          <img src="{{ page.icon | absolute_url }}" alt="{{ page.title}} icon" onerror="this.style.display='none'" class="page_icon">
+          {% if page.icon %}
+            <img src="{{ page.icon | absolute_url }}" alt="{{ page.title}} icon" onerror="this.style.display='none'" class="page_icon">
+          {% endif %}
+          {% if page.favicon %}
+            <h1 class="no_toc" style="color: {{ page.favicon_color }};"><i class="{{ page.favicon }} fa-2xl"></i></h1>
+          {% endif %}
         </div>
         <div class="w3-bar-item">
       {% endif %}
@@ -31,7 +36,7 @@ layout: default
             {% endif %}
               <span>{{ page.last_modified_at | date: page.date_fmt }}</span>
             </h6>
-      {% if page.icon %}
+      {% if page.icon or page.favicon %}
         </div>
       </div>
       {% endif %}

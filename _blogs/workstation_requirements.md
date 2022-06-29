@@ -3,6 +3,8 @@ title: Workstation Requirements
 tags: ["tools", "hw", "setup"]
 unsplash: 95YRwf6CNw8
 unsplash_fit: none
+favicon: "fa-solid fa-computer"
+favicon_color: gray
 posted: 2022-06-27
 ---
 

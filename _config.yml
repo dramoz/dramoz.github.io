@@ -234,6 +234,7 @@ defaults:
     values:
       layout: "page"
       unsplash_fit: none
+      favicon_color: black
       date_fmt: "%b %e, %Y"
   -
     scope:
