@@ -1,15 +1,16 @@
 ---
-title: Workstation requirements
+title: Workstation Requirements
 tags: ["tools", "hw", "setup"]
+unsplash: 95YRwf6CNw8
+unsplash_fit: none
 date: 2022-06-27
 ---
-
 
 # What hardware do I Need?
 
 One common question when starting computer programming, embedded systems or electronics is *What do I need?* As with any hobby or project, money is required to get started. But you do not need to break the bank.
 
-You can go through some basic explanations, or for the impatience, skip and jump ahead to [Summary](#Summary)
+You can go through some basic explanations, or for the impatience, skip and jump ahead to [Summary](#summary)
 
 ## The basics
 
@@ -19,7 +20,7 @@ You can go through some basic explanations, or for the impatience, skip and jump
 
 Nowadays investing in a good desktop computer is a need. However, one important thing to acknowledge is that you do not need to keep up to date with the latest technology.
 
-Back in the day, it used to be that computer hardware was updated so fast, that a desktop computer was replaced between two or four years (alas, some big companies still replace them every year). Most of this urge was dragged for software requirements like OS, [EDA](https://en.wikipedia.org/wiki/Electronic_design_automation) tools, [IDE](https://en.wikipedia.org/wiki/Integrated_development_environment), or computer games.
+Back in the day, it used to be that computer hardware was updated so fast, that a desktop computer was replaced between two or four years (alas, some big companies still replace them every year). Most of this urge was dragged for software requirements like OS, {% glossary EDA%} tools, {% glossary IDE %}, or computer games.
 
 But the truth now is that a good old i5 from 2012 is still a powerful processor capable of doing most of your daily computer tasks and embedded design. Saying so, in the end, it depends on what you are going to do with your desktop.
 

@@ -35,6 +35,8 @@ GEM
       terminal-table (~> 2.0)
     jekyll-compose (0.12.0)
       jekyll (>= 3.7, < 5.0)
+    jekyll-glossary_tooltip (1.4.0)
+      jekyll (>= 3.7, < 5.0)
     jekyll-sass-converter (2.2.0)
       sassc (> 2.0.1, < 3.0)
     jekyll-seo-tag (2.8.0)
@@ -44,6 +46,8 @@ GEM
       jekyll (>= 3.6, < 5.0)
       nokogiri (~> 1.6)
       rainbow (~> 3.0)
+    jekyll-titles-from-headings (0.5.3)
+      jekyll (>= 3.3, < 5.0)
     jekyll-watch (2.2.1)
       listen (~> 3.0)
     kramdown (2.4.0)
@@ -93,8 +97,10 @@ PLATFORMS
 DEPENDENCIES
   jekyll
   jekyll-compose
+  jekyll-glossary_tooltip
   jekyll-seo-tag
   jekyll-spaceship
+  jekyll-titles-from-headings
   kramdown-syntax-coderay
   rouge
   sass-embedded (~> 1.0)

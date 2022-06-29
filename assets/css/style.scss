@@ -4,6 +4,8 @@
 @forward "w3";
 @forward "w3-theme";
 
+@forward "jekyll-glossary_tooltip";
+
 {% if site.highlightjs == false %}
 @forward "highlight";
 {% else %}
@@ -26,6 +28,12 @@ blockquote {
 // Sidebar logo
 .page_icon {
   max-width: 96px;
+}
+
+.page_unsplash {
+  width: 600px;
+  height: 300px;
+  object-fit: none;
 }
 
 // Sidebar logo

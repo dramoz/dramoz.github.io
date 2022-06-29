@@ -7,6 +7,9 @@ layout: default
 <div class="w3-container w3-padding-16">
   <div style="width:80%">
     <div class="w3-padding" style="text-align: right;">
+      {% if page.unsplash %}
+        <img src="https://source.unsplash.com/{{ page.unsplash }}" alt="unsplash picture"  onerror="this.style.display='none'" class="page_unsplash">
+      {% endif %}
       {% if page.icon %}
       <div class="w3-bar" style="float: right;">
         <div class="w3-bar-item">
@@ -17,11 +20,17 @@ layout: default
           <h1 class="no_toc w3-text-theme" style="font-weight: bold;">{{page.title}}</h1>
           <h4 class="no_toc" style="font-style: italic;">
             {% if author_about %}
-              <a href="{{ author_about }}" class="w3-hover-text-theme" style="text-decoration: none;">{{ author }}</a>
+              <a href="{{ author_about }}" class="w3-hover-text-theme" style="text-decoration: none;">by {{ author }}</a>
             {% else %}
-              {{ author }}
+              by {{ author }}
             {% endif %}
           </h4>
+          {% if page.date %}
+            <h6 class="no_toc" style = "font-size: 0.9em; font-style: normal; color:gray;">
+              <span>Posted: {{ page.date | date: "%b %e, %Y" }}</span>
+              <span> · Updated:</span>
+            </h6>
+          {% endif %}
       {% if page.icon %}
         </div>
       </div>

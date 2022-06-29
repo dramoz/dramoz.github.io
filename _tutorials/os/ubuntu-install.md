@@ -1,11 +1,14 @@
 ---
 title: Ubuntu 20.04 Install and Setup
 tags: ["OS", "Ubuntu", "Install"]
+superseed: false
 icon: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Logo-ubuntu_cof-orange-hex.svg/1200px-Logo-ubuntu_cof-orange-hex.svg.png
 ---
 ## Prerequisites
 
+- Intel/AMD amd64/x86 processor (>1GHz, >2GB RAM, >10GB hard drive)
 
+The requirements for any OS vary accordingly to the final use of the desktop. For a more detailed explanation check my post [Workstation Requirements]({% link _blogs/workstation_requirements.md %}).
 
 ## Install
 

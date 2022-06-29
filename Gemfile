@@ -14,6 +14,9 @@ group :jekyll_plugins do
   gem 'jekyll-seo-tag'
   #gem 'jekyll-pwa-plugin'
   gem 'jekyll-spaceship'
+  gem 'jekyll-titles-from-headings'
+  #gem 'jekyll-archives'
+  gem 'jekyll-glossary_tooltip'
 end
 
 # Jekyll <= 4.2.0 compatibility with Ruby 3.0

@@ -100,11 +100,30 @@ sidebar_w: 360px
 # https://github.com/jekyll/jekyll-seo-tag
 # https://github.com/jeffreytse/jekyll-spaceship
 # https://github.com/allejo/jekyll-toc
+# https://github.com/erikw/jekyll-glossary_tooltip
 # ---------------------------------------------------------------
 #  - jekyll-feed
+#  - jekyll-archives
 plugins:
   - jekyll-seo-tag
   - jekyll-spaceship
+  - jekyll-titles-from-headings
+  - jekyll-glossary_tooltip
+
+# ---------------------------------------------------------------
+# https://github.com/jekyll/jekyll-archives
+#jekyll-archives:
+#  enabled: categories
+#  layout: archive
+# ---------------------------------------------------------------
+
+# ---------------------------------------------------------------
+# https://github.com/benbalter/jekyll-titles-from-headings
+titles_from_headings:
+  enabled:     true
+  strip_title: false
+  collections: false
+# ---------------------------------------------------------------
 
 # ---------------------------------------------------------------
 # Google Analytics
@@ -200,13 +219,21 @@ collections:
     output: true
 
 # Defaults
+# Unsplash fit setup
+#    fill - This is default. The image is resized to fill the given dimension. If necessary, the image will be stretched or squished to fit
+#    contain - The image keeps its aspect ratio, but is resized to fit within the given dimension
+#    cover - The image keeps its aspect ratio and fills the given dimension. The image will be clipped to fit
+#    none - The image is not resized
+#    scale-down - the image is scaled down to the smallest version of none or contain
+
 defaults:
   -
     scope:
       path: ""
     values:
       layout: "page"
-    
+      unsplash_fit: none
+      date_fmt: "%b%e%Y"
   -
     scope:
       path: "_tutorials"
