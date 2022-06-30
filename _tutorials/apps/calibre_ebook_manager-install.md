@@ -1,6 +1,6 @@
 ---
 title: eBooks with Calibre e-book management, OneDrive and Android
-tags: ["apps", "ebooks", "calibre", "managment"]
+tags: ["eBooks", "Calibre", "Managment"]
 ---
 
 # Introduction

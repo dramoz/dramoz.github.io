@@ -1,6 +1,6 @@
 ---
 title: VirtualBox Install and Setup
-tags: ["tools", "setup", "os", "virtualbox", "vm"]
+tags: ["Setup", "VirtualBox", "VM"]
 ---
 
 ## Prerequisites

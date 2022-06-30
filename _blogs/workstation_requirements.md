@@ -1,6 +1,6 @@
 ---
 title: Workstation Requirements
-tags: ["tools", "hw", "setup"]
+tags: ["Tools", "HW"]
 unsplash: 95YRwf6CNw8
 unsplash_fit: none
 favicon: "fa-solid fa-computer"

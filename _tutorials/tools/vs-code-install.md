@@ -1,6 +1,6 @@
 ---
 title: Visual Studio Code Setup
-tags: ["Tools", "VS-Code"]
+tags: ["VS-Code", "Install", "Setup"]
 ---
 
 ## Prerequisites
