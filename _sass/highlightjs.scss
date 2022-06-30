@@ -1,6 +1,19 @@
 @use "w3";
-
+/*
+.copyline {
+  content: "📄";
+  display: inline-block;
+  visibility: hidden;
+  padding: 0;
+  
+  //Position the tooltip
+  position: absolute;
+  z-index: 1;
+  left: 10px;
+}
+*/
 table.hljs-ln {
+  position: relative;
   width: auto;
   border-width: 0px;
   td {
@@ -8,8 +21,14 @@ table.hljs-ln {
   }
   tr:hover {
     font-size: 1.1em;
+    /*.copyline {
+      visibility: visible;
+    }*/
   }
 }
+/*td.hljs-ln-code::before {
+  @extend .copyline
+}*/
 
 /* for block of numbers */
 .hljs-ln-numbers {
