@@ -1,4 +1,11 @@
 <!-- Sidebar -->
+{% comment %}
+{% assign close_folder = "fa-solid fa-caret-right" %}
+{% assign open_folder  = "fa-solid fa-caret-down" %}
+{% endcomment %}
+{% assign close_folder = "fa-solid fa-folder" %}
+{% assign open_folder  = "fa-solid fa-folder-open" %}
+
 <div class="w3-sidebar w3-theme-d2 w3-card-4 w3-animate-left" style="width: {{ site.sidebar_w }}; display: block;" id="mySidebar">
   <div class="w3-bar w3-theme-dark">
     <button class="w3-bar-item w3-button" onclick="selectSidebarOption('SiteMap')" title="site map">
@@ -36,22 +43,7 @@
         <div class="w3-small" style="text-align: center; font-style: italic;">{{ site.tagline }}</div>
       </a>
     </div>
-    {% for collection in site.collections %}
-      {% if collection.label != "posts" %}
-        {% assign id = collection.label %}
-        <button onclick="sitemapAccordion('{{ id }}')" class="w3-button w3-block w3-left-align">
-          <h5>{{ collection.label | capitalize }}</h5>
-        </button>
-        
-        <div id="{{ id }}" class="w3-container w3-hide">
-          {% for post in collection.docs %}
-            <a href="{{ post.url }}" class="w3-button {% if post.url == site.url %} active {% endif %}" style="text-overflow: wrap;">
-              {{ post.title }}
-            </a>
-          {% endfor %}
-        </div>
-      {% endif %}
-    {% endfor %}
+    {% include sitemap.html %}
   </div>
 </div>
 
@@ -78,10 +70,13 @@
   }
   function sitemapAccordion(id) {
     var x = document.getElementById(id);
+    var xi = document.getElementById(id+"_i");
     if (x.className.indexOf("w3-show") == -1) {
       x.className += " w3-show";
+      xi.className = xi.className.replace("{{ close_folder }}", "{{ open_folder }}")
     } else {
       x.className = x.className.replace(" w3-show", "");
+      xi.className = xi.className.replace("{{ open_folder }}", "{{ close_folder }}")
     }
   }
 </script>
