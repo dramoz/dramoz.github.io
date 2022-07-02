@@ -25,7 +25,7 @@ blockquote {
   font-style: italic;
 }
 
-// Sidebar logo
+// Title logo/icons
 .page_icon {
   max-width: 96px;
 }
@@ -36,7 +36,7 @@ blockquote {
   object-fit: none;
 }
 
-// Sidebar logo
+// Sidebar Avatar
 .sidebar_logo {
   display: block;
   margin-top: 16px;
@@ -48,6 +48,11 @@ blockquote {
 
 // TOC
 $sidebar_toc_links_w: {{ site.sidebar_w }} - 40px;
+.sidemap_toc_icon {
+  height: 1em;
+  width: auto;
+  filter: grayscale(90%);
+}
 
 $a-tags: 'a, a:link, a:visited, a:hover, a:active';
 $a-tags-hover: 'a:hover';
@@ -67,29 +72,15 @@ $a-tags-active: 'a:active';
     //text-overflow: ellipsis;
     //white-space: nowrap;
     font-size: 1.10em;
-    margin-left: 4px;
-    padding-left: 4px;
+    margin-left: 12px;
+    padding-left: 6px;
     width: $sidebar_toc_links_w;
   }
-  /*#{$a-tags-hover} {
-    color: blue;
-    font-weight: bold;
-    font-variant: small-caps;
-    font-size: 1.1em;
-  }
-  #{$a-tags-active} {
-    color: green;
-    font-style: italic;
-    font-weight: bold;
-    font-size: 0.9em;
-  }*/
   #{$a-tags-hover} {
     @extend .w3-hover-theme, :hover;
-    //@extend .w3-hover-text-theme, :hover;
-    //@extend .w3-hover-border-theme, :hover;
   }
   a::before {
-    content: "• ";
+    content: "- ";
   }
 }
 
@@ -108,6 +99,9 @@ $a-tags-active: 'a:active';
     //@extend .w3-hover-theme, :hover;
     @extend .w3-hover-text-theme, :hover;
     //@extend .w3-hover-border-theme, :hover;
+  }
+  a::before {
+    content: "- ";
   }
 }
 
@@ -128,6 +122,8 @@ $a-tags-active: 'a:active';
   
   #{$a-tags} {
     display:inline-block;
+    margin-left: 8px;
+    padding-left: 4px;
     text-decoration: none;
     text-align: left;
     overflow: hidden;

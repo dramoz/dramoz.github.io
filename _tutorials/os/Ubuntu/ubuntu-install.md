@@ -3,6 +3,7 @@ title: Ubuntu 20.04 Install and Setup
 tags: ["Install", "Setup"]
 superseed: false
 icon: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Logo-ubuntu_cof-orange-hex.svg/1200px-Logo-ubuntu_cof-orange-hex.svg.png
+favicon: fa-brands fa-ubuntu
 ---
 ## Prerequisites
 

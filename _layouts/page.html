@@ -15,8 +15,7 @@ layout: default
         <div class="w3-bar-item">
           {% if page.icon %}
             <img src="{{ page.icon | absolute_url }}" alt="{{ page.title}} icon" onerror="this.style.display='none'" class="page_icon">
-          {% endif %}
-          {% if page.favicon %}
+          {% else %}
             <h1 class="no_toc" style="color: {{ page.favicon_color }};"><i class="{{ page.favicon }} fa-2xl"></i></h1>
           {% endif %}
         </div>

@@ -92,14 +92,25 @@ if __name__ == "__main__":
 <button onclick="sitemapAccordion('{id}')"><i class="{close_folder} " id="{id}_i"></i> {id}</button>
 """
   
-  def html_doc_link(url, title):
-    return f"""<a href="{url}" title="{title}"><i class="fa-solid fa-link"></i> {title}</a>\n"""
+  def html_doc_link(url, title, icon_url=None, favicon="fa-solid fa-link"):
+    if favicon:
+      icon = f'<i class="{favicon}"></i>'
+    else:
+      icon = f'''<img src="{icon_url}" alt="{title} icon" onerror="this.style.display='none'" class="sidemap_toc_icon">'''
+    
+    return f"""<a href="{url}" title="{title}">{icon} {title}</a>\n"""
   
   def get_children_html(tree):
     html = ""
     for c in tree:
       if isinstance(tree[c], str):
-        html += html_doc_link(posts[c]['url'], tree[c])
+        if 'favicon' in posts[c]:
+          html += html_doc_link(posts[c]['url'], tree[c], favicon=posts[c]['favicon'])
+        elif 'icon' in posts[c]:
+          html += html_doc_link(posts[c]['url'], tree[c], icon_url=posts[c]['icon'])
+        else:
+          html += html_doc_link(posts[c]['url'], tree[c])
+        
       else:
         html += html_accordion_button(c)
         html += f'<div id="{c}" class="w3-hide">\n'
