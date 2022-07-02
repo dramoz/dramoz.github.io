@@ -87,11 +87,9 @@ if __name__ == "__main__":
   close_folder = "fa-solid fa-folder"
   open_folder  = "fa-solid fa-folder-open"
   
-  def html_accordion_button(id, div):
+  def html_accordion_button(id):
     return f"""
-<button onclick="sitemapAccordion('{id}')">
-  <{div}><i class="{close_folder}" id="{id}_i"></i> {id}</{div}>
-</button>
+<button onclick="sitemapAccordion('{id}')"><i class="{close_folder} " id="{id}_i"></i> {id}</button>
 """
   
   def html_doc_link(url, title):
@@ -103,8 +101,8 @@ if __name__ == "__main__":
       if isinstance(tree[c], str):
         html += html_doc_link(posts[c]['url'], tree[c])
       else:
-        html += html_accordion_button(c, 'h6')
-        html += f'<div id="{c}" class="w3-container w3-hide">\n'
+        html += html_accordion_button(c)
+        html += f'<div id="{c}" class="w3-hide">\n'
         html += get_children_html(tree[c])
         html += '</div>\n\n'
       
@@ -115,8 +113,8 @@ if __name__ == "__main__":
 <div class="sitemap_toc">
   """
   for p in sitemap:
-    sitemap_html += html_accordion_button(p, "h5")
-    sitemap_html += f'<div id="{p}" class="w3-container w3-hide">\n'
+    sitemap_html += html_accordion_button(p)
+    sitemap_html += f'<div id="{p}" class="w3-hide">\n'
     sitemap_html += get_children_html(sitemap[p])
     sitemap_html += '</div>\n\n'
   

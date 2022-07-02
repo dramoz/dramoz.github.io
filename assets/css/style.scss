@@ -47,6 +47,8 @@ blockquote {
 }
 
 // TOC
+$sidebar_toc_links_w: {{ site.sidebar_w }} - 40px;
+
 $a-tags: 'a, a:link, a:visited, a:hover, a:active';
 $a-tags-hover: 'a:hover';
 $a-tags-active: 'a:active';
@@ -58,7 +60,16 @@ $a-tags-active: 'a:active';
     margin-left: 6px;
   }
   #{$a-tags} {
+    display:inline-block;
     text-decoration: none;
+    text-align: left;
+    //overflow: hidden;
+    //text-overflow: ellipsis;
+    //white-space: nowrap;
+    font-size: 1.10em;
+    margin-left: 4px;
+    padding-left: 4px;
+    width: $sidebar_toc_links_w;
   }
   /*#{$a-tags-hover} {
     color: blue;
@@ -76,6 +87,9 @@ $a-tags-active: 'a:active';
     @extend .w3-hover-theme, :hover;
     //@extend .w3-hover-text-theme, :hover;
     //@extend .w3-hover-border-theme, :hover;
+  }
+  a::before {
+    content: "• ";
   }
 }
 
@@ -97,27 +111,7 @@ $a-tags-active: 'a:active';
   }
 }
 
-$sitemap_nomargin_nopadding: '.sitemap_toc, .sitemap_toc div, .sitemap_toc button';
-
 .sitemap_toc {
-  //@extend .w3-button;
-  //@extend .w3-left-align;
-  
-  overflow: hidden;
-  text-overflow: ellipsis;
-  margin: 0px;
-  #{$a-tags} {
-    display:inline-block;
-    text-decoration: none;
-    text-align: left;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    width: {{ site.sitemap_links_w }};
-  }
-  #{$a-tags-hover} {
-   @extend .w3-hover-theme, :hover;
-  }
-  
   div {
     @extend .w3-container;
   }
@@ -126,9 +120,24 @@ $sitemap_nomargin_nopadding: '.sitemap_toc, .sitemap_toc div, .sitemap_toc butto
     @extend .w3-button;
     @extend .w3-block;
     @extend .w3-left-align;
+    font-size: 1.2em;
     margin: 0px;
     padding: 0px;
     padding-left: 6px;
+  }
+  
+  #{$a-tags} {
+    display:inline-block;
+    text-decoration: none;
+    text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 1.00em;
+    width: $sidebar_toc_links_w;
+  }
+  #{$a-tags-hover} {
+   @extend .w3-hover-theme, :hover;
   }
 }
 
