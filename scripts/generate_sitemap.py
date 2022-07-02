@@ -1,5 +1,8 @@
 # Copyright 2022 - Danilo Ramos
 # Python script to automatically generate a sitemap TOC from collections information
+
+# TODO: check and generate order
+
 import site
 import sys, os
 import frontmatter
@@ -25,6 +28,7 @@ if __name__ == "__main__":
     c_path = f"_{collection}/"
     for fl in Path(c_path).rglob('**/*'):
       if fl.is_file():
+        html_path = str(fl.with_suffix(".html"))[1:]
         fm = frontmatter.load(str(fl))
         fl = Path(str(fl).replace(c_path, ""))
         clvl = tree
@@ -48,6 +52,7 @@ if __name__ == "__main__":
             tags.add(tag)
         
         fm.metadata['dir_tags'] = list(set(tags_lst))
+        fm.metadata['url'] = html_path
         dir_tags.update(set(tags_lst))
         
         clvl[fl.name] = fm.metadata['title']
@@ -96,7 +101,7 @@ if __name__ == "__main__":
     html = ""
     for c in tree:
       if isinstance(tree[c], str):
-        html += html_doc_link(c, tree[c])
+        html += html_doc_link(posts[c]['url'], tree[c])
       else:
         html += html_accordion_button(c, 'h4')
         html += f'<div id="{c}" class="w3-container w3-hide">\n'
