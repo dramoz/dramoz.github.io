@@ -62,7 +62,8 @@ $a-tags-active: 'a:active';
     list-style-type: none;
     margin: 0;
     padding: 0;
-    margin-left: 6px;
+    margin-left: 8px;
+    padding-left: 4px;
   }
   #{$a-tags} {
     display:inline-block;
@@ -72,8 +73,6 @@ $a-tags-active: 'a:active';
     //text-overflow: ellipsis;
     //white-space: nowrap;
     font-size: 1.10em;
-    margin-left: 12px;
-    padding-left: 6px;
     width: $sidebar_toc_links_w;
   }
   #{$a-tags-hover} {
@@ -89,7 +88,8 @@ $a-tags-active: 'a:active';
     list-style-type: none;
     margin: 0;
     padding: 0;
-    margin-left: 6px;
+    margin-left: 8px;
+    padding-left: 4px;
   }
   #{$a-tags} {
     text-decoration: none;
