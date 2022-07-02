@@ -97,6 +97,41 @@ $a-tags-active: 'a:active';
   }
 }
 
+$sitemap_nomargin_nopadding: '.sitemap_toc, .sitemap_toc div, .sitemap_toc button';
+
+.sitemap_toc {
+  //@extend .w3-button;
+  //@extend .w3-left-align;
+  
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0px;
+  #{$a-tags} {
+    display:inline-block;
+    text-decoration: none;
+    text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: {{ site.sitemap_links_w }};
+  }
+  #{$a-tags-hover} {
+   @extend .w3-hover-theme, :hover;
+  }
+  
+  div {
+    @extend .w3-container;
+  }
+  
+  button {
+    @extend .w3-button;
+    @extend .w3-block;
+    @extend .w3-left-align;
+    margin: 0px;
+    padding: 0px;
+    padding-left: 6px;
+  }
+}
+
 // Hack to fix TOC section links with fixed top navbars
 // https://stackoverflow.com/a/17303334/6567806
 :target[id]::before {

@@ -28,7 +28,7 @@ if __name__ == "__main__":
     c_path = f"_{collection}/"
     for fl in Path(c_path).rglob('**/*'):
       if fl.is_file():
-        html_path = str(fl.with_suffix(".html"))[1:]
+        html_path = "/" + str(fl.with_suffix(".html"))[1:]
         fm = frontmatter.load(str(fl))
         fl = Path(str(fl).replace(c_path, ""))
         clvl = tree
@@ -89,13 +89,13 @@ if __name__ == "__main__":
   
   def html_accordion_button(id, div):
     return f"""
-<button onclick="sitemapAccordion('{id}')" class="w3-button w3-block w3-left-align">
+<button onclick="sitemapAccordion('{id}')">
   <{div}><i class="{close_folder}" id="{id}_i"></i> {id}</{div}>
 </button>
 """
   
   def html_doc_link(url, title):
-    return f"""<a href="{url}" class="w3-button" style="text-overflow: wrap;">{title}</a>\n"""
+    return f"""<a href="{url}" title="{title}"><i class="fa-solid fa-link"></i> {title}</a>\n"""
   
   def get_children_html(tree):
     html = ""
@@ -103,19 +103,23 @@ if __name__ == "__main__":
       if isinstance(tree[c], str):
         html += html_doc_link(posts[c]['url'], tree[c])
       else:
-        html += html_accordion_button(c, 'h4')
+        html += html_accordion_button(c, 'h6')
         html += f'<div id="{c}" class="w3-container w3-hide">\n'
         html += get_children_html(tree[c])
         html += '</div>\n\n'
       
     return html
   
-  sitemap_html = "<!-- Sitemap TOC -->\n"
+  sitemap_html = """
+<!-- Sitemap TOC -->\n
+<div class="sitemap_toc">
+  """
   for p in sitemap:
     sitemap_html += html_accordion_button(p, "h5")
     sitemap_html += f'<div id="{p}" class="w3-container w3-hide">\n'
     sitemap_html += get_children_html(sitemap[p])
     sitemap_html += '</div>\n\n'
   
+  sitemap_html += "</div>"
   Path(sitemap_path).write_text(sitemap_html)
   
