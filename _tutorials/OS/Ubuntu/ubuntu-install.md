@@ -27,7 +27,7 @@ The requirements for any OS vary accordingly to the final use of the desktop. Fo
 Run VM and log into Ubuntu.
 
 ```bash
-# right click on middle of the screen
+# right click on the middle of the screen
 # -> Open in Terminal
 sudo apt update -y; sudo apt upgrade -y; sudo apt autoremove -y; sudo reboot
 ```
