@@ -30,11 +30,21 @@
   {% if site.highlightjs == true %}
     <link rel="stylesheet" href="{{ site.highlightjs_theme }}">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
-    <script>hljs.highlightAll();</script>
+    <script src="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.css"
+    />
+    <script>
+      hljs.addPlugin(new CopyButtonPlugin());
+      hljs.highlightAll();
+    </script>
+    {% if site.highlight_lno == true %}
     <!-- Line numbers -->
     <!-- https://github.com/wcoder/highlightjs-line-numbers.js/ -->
     <script src="//cdn.jsdelivr.net/npm/highlightjs-line-numbers.js@2.8.0/dist/highlightjs-line-numbers.min.js"></script>
     <script>hljs.initLineNumbersOnLoad();</script>
+    {% endif %}
   {% endif %}
   <!--load all Font Awesome styles -->
   <link href="/assets/fontawesome/css/all.css" rel="stylesheet">
