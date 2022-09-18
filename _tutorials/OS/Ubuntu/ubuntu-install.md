@@ -1,5 +1,5 @@
 ---
-title: Ubuntu 20.04 Install and Setup
+title: Ubuntu 20.04 Install and Setup (Stand-alone or as VM)
 tags: ["Install", "Setup"]
 superseed: false
 icon: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Logo-ubuntu_cof-orange-hex.svg/1200px-Logo-ubuntu_cof-orange-hex.svg.png
@@ -11,16 +11,28 @@ favicon: fa-brands fa-ubuntu
 
 The requirements for any OS vary accordingly to the final use of the desktop. For a more detailed explanation check my post [Workstation Requirements]({% link _blogs/workstation_requirements.md %}).
 
-## Install
+## Introduction
 
-1. Download Ubuntu from [](https://ubuntu.com/download/desktop)[https://ubuntu.com/download/desktop](https://ubuntu.com/download/desktop)
-2. In VM under settings add ISO file to `Storage > IDE > Choose a disk file`
-3. Start VM
-4. Run `Install Ubuntu` from the menu
+This is a step-by-step Ubuntu OS installation. It targets Ubuntu 20.04 LTS, but it could work as a guide for other versions.
+
+For a quick - semi-automated installation check [Ubuntu - Quick Install]()
+
+## Installation
+
+1. Download <img src="https://assets.ubuntu.com/v1/8dd99b80-ubuntu-logo14.png" alt="Ubuntu" style="height:25px" /> from [Ubuntu 20.04.4 LTS (Focal Fossa)](https://releases.ubuntu.com/20.04.4/)
+   1. <img src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/solid/computer.svg" alt="desktop" style="height:1.2em;" /> Host: create a bootable USB - you can use [<img src="https://raw.githubusercontent.com/pbatard/rufus/master/res/icons/rufus-128.png" style="height:1.2em" /> Rufus](https://rufus.ie/en/) and enable your BIOS to boot from the USB drive
+   2. <img src="https://cdn.icon-icons.com/icons2/2699/PNG/512/virtualbox_logo_icon_169253.png" alt="VirtualBox" style="height:1.2em" /> [VirtualBox](https://www.virtualbox.org/): create a new [VM]({% link _tutorials/OS/virtualbox-install.md %}) and under settings add the downloaded ISO file to `Storage > IDE > Choose a disk file`
+   3. <img src="https://upload.wikimedia.org/wikipedia/en/7/7d/VMware_Player_logo.png" alt="img" style="height:1.2em;" /> [VMWare Player](https://partnerweb.vmware.com/GOSIG/Ubuntu_20_04_LTS.html) create a new [VM]({% link _tutorials/OS/virtualbox-install.md %})
+   
+2. Boot or start the VM
+3. Run `Install Ubuntu` from the menu
    1. Select Minimal Installation
    2. Add user
    3. Wait
-5. Done!
+
+<!-- Add slideshow -->
+
+1. Done!
 
 ### First Step
 
@@ -32,7 +44,7 @@ Run VM and log into Ubuntu.
 sudo apt update -y; sudo apt upgrade -y; sudo apt autoremove -y; sudo reboot
 ```
 
-Basic R&D setup
+#### Basic R&D setup
 
 ```bash
 # For USB/UART serial access
@@ -43,7 +55,38 @@ cd ~
 mkdir -p dev tools repos
 ```
 
-### Add access to **GitHub with SSH key**
+#### Basic Development Tools & Packages
+
+```bash
+# Required apps
+sudo apt install -y build-essential git graphviz gtkwave screen tmux tree vim python3 python3-pip python3-tk meld
+
+# Setup git credentials
+git config --global user.email "yout@email"
+git config --global user.name "Your Name"
+```
+
+#### Shortcut
+
+```bash
+# To do setup with devsetup scripts
+sudo apt install -y git
+cd ~/dev
+git clone git@github.com:dramoz/devsetup.git
+cd ~
+
+# Clone repository with scripts to automate installation
+~/dev/devsetup/scripts/ubuntu_setup.sh
+
+# Note: -> split script in two, first install virtualenv, source .bashrc and then do rest
+# -> create dev + hdl + ml env separately
+~/dev/devsetup/scripts/dev_setup.sh
+
+```
+
+### SSH Keys
+
+#### Add access to **GitHub with SSH key**
 
 ```bash
 ssh-keygen -t ed25519 -C "your@email"
@@ -52,13 +95,9 @@ eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/id_ed25519
 cat ~/.ssh/id_ed25519.pub
 #Goto: <https://github.com/settings/keys>
-
-# Optional
-cd ~/dev
-git clone git@github.com:dramoz/devsetup.git
 ```
 
-### Add access to Azure DevOps **with SSH key**
+#### Add access to Azure DevOps **with SSH key**
 
 ```bash
 ssh-keygen -C "your@email"
@@ -67,7 +106,9 @@ cat ~/.ssh/id_rsa.pub
 #Goto: <https://COMPANY.visualstudio.com/_usersSettings/keys>
 ```
 
-### Install Guest Additions (VM menu)
+### Virtual Machine (Guess)
+
+#### Virtual Box (Guest Additions)
 
 ```bash
 # From VM menu
@@ -79,21 +120,18 @@ sudo adduser $USER vboxsf
 sudo reboot
 ```
 
-# Setup Basic Development Tools
+#### VMWare
 
 ```bash
-# Purge some stuff as required (VM Ubuntu)
-sudo apt purge -y avahi-daemon
-
-# Required apps
-sudo apt install -y build-essential git graphviz gtkwave screen tmux tree vim python3 python3-pip python3-tk meld avahi-daemon
-
-# Setup git credentials
-git config --global user.email "yout@email"
-git config --global user.name "Your Name"
+# Mouse wheel fix
+sudo apt remove xserver-xorg-input-libinput && sudo apt install xserver-xorg-input-evdev
 ```
 
-## Setup Python Virtualenv
+
+
+## Setup Development Tools
+
+### Setup Python Virtualenv
 
 ```bash
 # Python Virtual Env (just in case)
@@ -120,13 +158,13 @@ source ~/.bashrc
 # ------------------------------------------------------------
 ```
 
-## **Cleanup**
+### **Cleanup**
 
 ```
 sudo apt -y update; sudo apt -y upgrade; sudo apt -y autoremove; sudo reboot
 ```
 
-## Setup dev virtualenv (optional)
+### Setup dev virtualenv (optional)
 
 ```bash
 cd ~
@@ -160,12 +198,9 @@ Open **Ubuntu Software App** and install:
 
 * **Visual Code** : it takes some time as it has to install snap first
 * **Brave** : web browser (enable sync)
-* **Typora** : WYSIWYG markdown editor (requires pay license)
+* [pyGrid](https://github.com/pkkid/pygrid)
 
-<aside>
-💡 Don’t forget right click on the app, `Add to favorites`
-
-</aside>
+> 💡 Don’t forget right click on the app, `Add tofavouritess`
 
 # Gnome Extensions (optional)
 
@@ -182,15 +217,15 @@ firefox --new-window <https://extensions.gnome.org/> &
 
 > Open `Tweaks` App and click `Extensions` from applications to change extensions settings
 
-* [Dash to Panel](https://extensions.gnome.org/extension/1160/dash-to-panel/), setup:
+* [<img src="https://extensions.gnome.org/extension-data/icons/icon_1160_AXIRYp2.png" style="height:1.2em;" />Dash to Panel](https://extensions.gnome.org/extension/1160/dash-to-panel/), setup:
   * `Position > PanelThickness: 32px`
   * `Position > ActivitiesButton: Enable`
   * `Behavior > ShowFavoriteApplications: Disable`
-* [Favorites Menu](https://extensions.gnome.org/extension/115/favorites-menu/)
-* [gTile](https://extensions.gnome.org/extension/28/gtile/)
-* [Removable Drive Menu](https://extensions.gnome.org/extension/7/removable-drive-menu/)
-* [Workspace Indicator](https://extensions.gnome.org/extension/21/workspace-indicator/)
-* [Places Status Indicator](https://extensions.gnome.org/extension/8/places-status-indicator/)
+* [<img src="https://extensions.gnome.org/static/images/plugin.png" style="height:1.2em;" />Favorites Menu](https://extensions.gnome.org/extension/115/favorites-menu/)
+* [<img src="https://extensions.gnome.org/extension-data/icons/icon_7.png" style="height:1.2em;" />Removable Drive Menu](https://extensions.gnome.org/extension/7/removable-drive-menu/)
+* [<img src="https://extensions.gnome.org/extension-data/icons/icon_21.png" style="height:1.2em;" />Workspace Indicator](https://extensions.gnome.org/extension/21/workspace-indicator/)
+* [<img src="https://extensions.gnome.org/extension-data/icons/icon_8.png" style="height:1.2em;" />Places Status Indicator](https://extensions.gnome.org/extension/8/places-status-indicator/)
+* [<img src="https://extensions.gnome.org/extension-data/icons/icon_1634_jvSXMcs.png" style="height:1.2em;" />Resource Monitor](https://extensions.gnome.org/extension/1634/resource-monitor/)
 
 # Other Apps
 
