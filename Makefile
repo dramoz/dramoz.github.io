@@ -7,7 +7,6 @@
 # https://www.gnu.org/software/make/manual/html_node/index.html#SEC_Contents
 # https://pages.github.com/
 # https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll
-# https://github.com/cotes2020/jekyll-theme-chirpy
 # =========================================================================================
 # Target and directories
 
