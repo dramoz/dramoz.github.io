@@ -1,5 +1,5 @@
 ---
-title: Workstation Requirements: VMs and what PC should I get?
+title: Workstation Requirements - VMs and what PC should I get?
 tags: ["Tools", "HW"]
 unsplash: 95YRwf6CNw8
 unsplash_fit: none
@@ -73,12 +73,12 @@ You can do fine with only Windows 10/11 or Ubuntu. But when you start doing some
 
 Maintaining several workstations is a pain, plus you need multiple displays/mouse/keyboard or a KVM. With VMs you can install or reinstall OS at your convenience.
 
-### <img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Windows_logo_-_2012.svg" alt="WSL2" style="height:30px" />+<img src="https://upload.wikimedia.org/wikipedia/commons/a/af/Tux.png" alt="lINUX" style="height:30px" /> WSL2 vs VirtualBox <img src="https://cdn.icon-icons.com/icons2/2699/PNG/512/virtualbox_logo_icon_169253.png" alt="VirtualBox" style="height:30px" />
+### WSL2 vs VirtualBox
 
 When running Windows 10/11 as a host, you have two options to run a Linux distribution:
 
-- WSL2
-- VirtualBox
+- <img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Windows_logo_-_2012.svg" alt="WSL2" style="height:1.2em" />**+**<img src="https://upload.wikimedia.org/wikipedia/commons/a/af/Tux.png" alt="lINUX" style="height:1.2em" /> WSL2
+- <img src="https://cdn.icon-icons.com/icons2/2699/PNG/512/virtualbox_logo_icon_169253.png" alt="VirtualBox" style="height:1.2em" /> VirtualBox
 
 Both WSL2 and VirtualBox work as VM. While WSL2 is *"integrated"* into Windows, VirtualBox must be installed and each VM should be created manually.
 
