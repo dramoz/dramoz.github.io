@@ -28,13 +28,13 @@ endef
 # Jekyll Server
 .PHONY: run_jekyll
 run_jekyll:
-	$(call python_mk,run_process,'jekyll serve --watch --drafts --incremental')
+	$(call python_mk,run_process,'bundle exec jekyll serve --watch --drafts --incremental')
 	@sleep 1
 	$(call python_mk,run_process,'firefox --new-tab http://127.0.0.1:4000/')
 
 .PHONY: reload_jekyll
 reload_jekyll: kill_jekyll clean
-	$(call python_mk,reload_process,'jekyll serve --watch --drafts --incremental')
+	$(call python_mk,reload_process,'bundle exec jekyll serve --watch --drafts --incremental')
 
 .PHONY: open_local_web
 open_local_web:
