@@ -4,7 +4,7 @@ tags: ["Computer Science", "Languages"]
 superseed: false
 ---
 
-![](/home/dramoz/dev/dramoz.github.io/assets/img/programming_infogram.jpg)
+<img src="../../assets/img/programming_infogram.jpg" alt="programming_infogram" style="zoom:50%;" />
 
 ---
 
