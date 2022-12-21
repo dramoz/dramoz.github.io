@@ -263,3 +263,30 @@ firefox --new-window <https://extensions.gnome.org/> &
   # Load website
   firefox <http://127.0.0.1:4000/> &
   ```
+
+# Shared Folder
+
+```bash
+# https://www.techrepublic.com/article/share-directories-lan-from-ubuntu-desktop-22-04/
+# Open Files
+# -> goto folder
+# -> right click, select "Local Network Share", enable share
+# -> proceed to install App (samba)
+# -> goto folder and disable share
+
+# Add user to samba group
+sudo gpasswd sambashare -a USER
+sudo smbpasswd -a USER
+# -> create password
+
+# Add shared to Samba Conf.
+sudo gedit /etc/samba/smb.conf
+# -> add to the bottom:
+
+[FOLDER_NAME]
+path = /home/USER/FOLDER_NAME
+browsable = yes
+writable = yes
+read only = no
+```
+
