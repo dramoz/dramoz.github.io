@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <title>
+    Danilo Ramos, MSc, P.Eng.
+  </title>
+  
+  <!-- https://github.com/jekyll/jekyll-seo-tag --><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Markdown Style Test &amp; Cheatsheet | Danilo Ramos, MSc, P.Eng.</title>
+<meta name="generator" content="Jekyll v4.2.2">
+<meta property="og:title" content="Markdown Style Test &amp; Cheatsheet">
+<meta property="og:locale" content="en_CA">
+<meta name="description" content="GitHub Markdown test">
+<meta property="og:description" content="GitHub Markdown test">
+<link rel="canonical" href="https://dramoz.github.io/blogs/markdown_test">
+<meta property="og:url" content="https://dramoz.github.io/blogs/markdown_test">
+<meta property="og:site_name" content="Danilo Ramos, MSc, P.Eng.">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2022-06-01T00:00:00+00:00">
+<meta name="twitter:card" content="summary">
+<meta property="twitter:title" content="Markdown Style Test &amp; Cheatsheet">
+<meta name="twitter:site" content="@dramoz1977">
+<meta name="google-site-verification" content="google-site-verification=e8PlCoi0UOY5SGE60r1luNuxmYoKY_XI9va3CGm_oQg">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-04-05T18:04:13+00:00","datePublished":"2022-06-01T00:00:00+00:00","description":"GitHub Markdown test","headline":"Markdown Style Test &amp; Cheatsheet","mainEntityOfPage":{"@type":"WebPage","@id":"https://dramoz.github.io/blogs/markdown_test"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://dramoz.github.io/assets/img/avatar.png"}},"url":"https://dramoz.github.io/blogs/markdown_test"}</script>
+<!-- End Jekyll SEO tag -->
+<!-- W3.css -->
+  <link rel="stylesheet" href="https://dramoz.github.io/assets/css/style.css">
+  <!-- Note: this is done at style.scss level <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
+  <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-teal.css">
+  <!--<link rel="stylesheet" href="https://www.w3schools.com/lib/.css">-->
+  <script src="https://www.w3schools.com/lib/w3.js"></script> 
+  
+  <!-- Select the font -->
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans">
+  <style>
+    body,h1,h2,h3,h4,h5,h6 {font-family: 'Open Sans', sans-serif;;}
+  </style>
+  
+  <!-- Code highlight -->
+  <!-- https://highlightjs.org/download/ -->
+  <!-- https://jojozhuang.github.io/tutorial/jekyll-highlighting/ -->
+  
+    <link rel="stylesheet" href="https://highlightjs.org/static/demo/styles/atom-one-dark-reasonable.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
+    <script src="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.js"></script>
+    <script>
+      hljs.addPlugin(new CopyButtonPlugin());
+      hljs.highlightAll();
+    </script>
+    
+    <!-- Line numbers -->
+    <!-- https://github.com/wcoder/highlightjs-line-numbers.js/ -->
+    <script src="//cdn.jsdelivr.net/npm/highlightjs-line-numbers.js@2.8.0/dist/highlightjs-line-numbers.min.js"></script>
+    <script>hljs.initLineNumbersOnLoad();</script>
+    
+  
+  <!--load all Font Awesome styles -->
+  <link href="/assets/fontawesome/css/all.css" rel="stylesheet">
+  
+  <!-- https://realfavicongenerator.net/ -->
+
+<link rel="apple-touch-icon" sizes="180x180" href="https://dramoz.github.io/assets/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://dramoz.github.io/assets/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://dramoz.github.io/assets/favicons/favicon-16x16.png">
+<link rel="manifest" href="https://dramoz.github.io/assets/favicons/site.webmanifest">
+<link rel="mask-icon" href="https://dramoz.github.io/assets/favicons/safari-pinned-tab.svg">
+<link rel="shortcut icon" href="https://dramoz.github.io/assets/favicons/favicon.ico">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-config" content="https://dramoz.github.io/assets/favicons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+<!-- https://desiredpersona.com/google-analytics-jekyll/ --><!-- from minima -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=%7B" id>nil, "pv"=>{"proxy_endpoint"=>nil}}"></script>
+<script>
+  window['ga-disable-{"id"=>nil, "pv"=>{"proxy_endpoint"=>nil}}'] = window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1";
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){window.dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', '{"id"=>nil, "pv"=>{"proxy_endpoint"=>nil}}');
+</script>
+
+<script>MathJax={"tex":{"inlineMath":[["$","$"],["\\(","\\)"]],"displayMath":[["$$","$$"],["\\[","\\]"]]},"svg":{"fontCache":"global"}}</script><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    
+    <!-- Sidebar -->
+
+
+
+
+<div class="w3-sidebar w3-theme-d2 w3-card-4 w3-animate-left" style="width: 360px; display: block;" id="mySidebar">
+  <div class="w3-bar w3-theme-dark">
+    <button class="w3-bar-item w3-button" onclick="selectSidebarOption('SiteMap')" title="site map">
+      <i class="fa-solid fa-sitemap"></i>
+    </button>
+    <button class="w3-bar-item w3-button" onclick="selectSidebarOption('TOC')" title="table of contents">
+      <i class="fa-solid fa-table-list"></i>
+    </button>
+    <button class="w3-bar-item w3-button w3-right" onclick="sidebarClose()" title="close Sidebar">
+      <i class="fa-solid fa-angles-left"></i>
+    </button>
+  </div>
+  
+  
+  <div id="TOC" class="sidebar_sel toc_sidebar" style="display:block">
+    <div class="w3-bar-item w3-theme-d3 w3-card">
+      Markdown Style Test &amp; Cheatsheet
+    </div>
+    <div class="w3-bar-item w3-padding-16 w3-theme-d2">
+      <ul>
+<li>
+<a href="#github-markdown-test">GitHub Markdown test</a><ul>
+<li>
+<a href="#headings">Headings</a><ul><li>
+<a href="#h3">H3</a><ul><li>
+<a href="#h4">H4</a><ul><li>
+<a href="#h5">H5</a><ul><li><a href="#h6-the-smallest-heading">H6 (The smallest heading)</a></li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li>
+<li><a href="#syntax-coloring">Syntax coloring</a></li>
+<li><a href="#tables">Table(s)</a></li>
+<li>
+<a href="#collapsable">Collapsable</a><ul><li><a href="#we-can-hide-anything-even-code">We can hide anything, even code!</a></li></ul>
+</li>
+</ul>
+</li>
+<li><a href="#images">Image(s)</a></li>
+<li><a href="#lists">Lists</a></li>
+<li><a href="#emoji">Emoji</a></li>
+<li><a href="#footnotes">Footnotes</a></li>
+<li>
+<a href="#spaechip-plugin">Spaechip plugin</a><ul>
+<li><a href="#math">Math</a></li>
+<li><a href="#mermaid">Mermaid</a></li>
+<li><a href="#video">Video</a></li>
+</ul>
+</li>
+</ul>
+    </div>
+  </div>
+  
+  <div id="SiteMap" class="sidebar_sel sitemap_sidebar" style="display:none">
+    <div class="sidebar_logo">
+      <a href="/" style="text-decoration: none;">
+        <img src="/assets/img/avatar.png" alt="logo" onerror="this.style.display='none'" class="sidebar_logo">
+        <div style="text-align: center;">Danilo Ramos, MSc, P.Eng.</div>
+        <div class="w3-small" style="text-align: center; font-style: italic;">Embedded Systems Design, Tutorials, Projects and Guides</div>
+      </a>
+    </div>
+    
+<!-- Sitemap TOC -->
+
+<div class="sitemap_toc">
+  
+<button onclick="sitemapAccordion('Blogs')"><i class="fa-solid fa-folder " id="Blogs_i"></i> Blogs</button>
+<div id="Blogs" class="w3-hide">
+<a href="/blogs/markdown_test.html" title="Markdown Style Test &amp; Cheatsheet"><i class="fa-solid fa-link"></i> Markdown Style Test &amp; Cheatsheet</a>
+<a href="/blogs/workstation_requirements.html" title="Workstation Requirements"><i class="fa-solid fa-computer"></i> Workstation Requirements</a>
+</div>
+
+
+<button onclick="sitemapAccordion('Tutorials')"><i class="fa-solid fa-folder " id="Tutorials_i"></i> Tutorials</button>
+<div id="Tutorials" class="w3-hide">
+
+<button onclick="sitemapAccordion('Apps')"><i class="fa-solid fa-folder " id="Apps_i"></i> Apps</button>
+<div id="Apps" class="w3-hide">
+<a href="/tutorials/Apps/calibre_ebook_manager-install.html" title="eBooks with Calibre e-book management, OneDrive and Android"><i class="fa-solid fa-link"></i> eBooks with Calibre e-book management, OneDrive and Android</a>
+</div>
+
+
+<button onclick="sitemapAccordion('OS')"><i class="fa-solid fa-folder " id="OS_i"></i> OS</button>
+<div id="OS" class="w3-hide">
+<a href="/tutorials/OS/virtualbox-install.html" title="VirtualBox Install and Setup"><i class="fa-solid fa-link"></i> VirtualBox Install and Setup</a>
+
+<button onclick="sitemapAccordion('Ubuntu')"><i class="fa-solid fa-folder " id="Ubuntu_i"></i> Ubuntu</button>
+<div id="Ubuntu" class="w3-hide">
+<a href="/tutorials/OS/Ubuntu/ubuntu-install.html" title="Ubuntu 20.04 Install and Setup"><i class="fa-brands fa-ubuntu"></i> Ubuntu 20.04 Install and Setup</a>
+</div>
+
+</div>
+
+
+<button onclick="sitemapAccordion('Tools')"><i class="fa-solid fa-folder " id="Tools_i"></i> Tools</button>
+<div id="Tools" class="w3-hide">
+<a href="/tutorials/Tools/jekyll-github-pages.html" title="GitHub Pages with Jekyll, W3.CSS and Python"><i class="fa-solid fa-link"></i> GitHub Pages with Jekyll, W3.CSS and Python</a>
+<a href="/tutorials/Tools/vs-code-install.html" title="Visual Studio Code Setup"><i class="fa-solid fa-link"></i> Visual Studio Code Setup</a>
+</div>
+
+</div>
+
+
+<button onclick="sitemapAccordion('Projects')"><i class="fa-solid fa-folder " id="Projects_i"></i> Projects</button>
+<div id="Projects" class="w3-hide">
+<a href="/projects/my_project.html" title="My First Project"><i class="fa-solid fa-link"></i> My First Project</a>
+</div>
+
+</div>
+  </div>
+</div>
+
+<!-- Sidebar scripts -->
+<script>
+  function sidebarOpen() {
+    document.getElementById("main").style.marginLeft = "360px";
+    document.getElementById("mySidebar").style.width = "360px";
+    document.getElementById("mySidebar").style.display = "block";
+    document.getElementById("openNav").style.display = 'none';
+  }
+  function sidebarClose() {
+    document.getElementById("main").style.marginLeft = "0";
+    document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("openNav").style.display = "inline-block";
+  }
+  function selectSidebarOption(sidebarOption) {
+    var i;
+    var x = document.getElementsByClassName("sidebar_sel");
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none";
+    }
+    document.getElementById(sidebarOption).style.display = "block";
+  }
+  function sitemapAccordion(id) {
+    var x = document.getElementById(id);
+    var xi = document.getElementById(id+"_i");
+    if (x.className.indexOf("w3-show") == -1) {
+      x.className += " w3-show";
+      xi.className = xi.className.replace("fa-solid fa-folder", "fa-solid fa-folder-open")
+    } else {
+      x.className = x.className.replace(" w3-show", "");
+      xi.className = xi.className.replace("fa-solid fa-folder-open", "fa-solid fa-folder")
+    }
+  }
+</script>
+
+    
+    <div id="main" style="margin-left: 360px;">
+      <div class="w3-container w3-theme-l5">
+        <!-- Sidebar open button -->
+        <div class="w3-top">
+          <button id="openNav" class="w3-bar-item w3-button" title="open Sidebar" style="display: none;" onclick="sidebarOpen()">
+            <i class="fa-solid fa-angles-right"></i>
+          </button>
+        </div>
+        
+        <!-- Page Content -->
+        <div class="w3-panel w3-auto">
+          <!-- Top Nav -->
+<div class="w3-top">
+  <div class="w3-bar w3-theme">
+    <!-- <a href="#" class="w3-bar-item w3-button">Markdown Style Test & Cheatsheet</a> -->
+    <a href="https://dramoz.github.io" class="w3-bar-item w3-button"><i class="fa fa-home"></i></a>
+    <a href="#" class="w3-bar-item w3-button"><i class="fa fa-search"></i></a>
+    <a href="#" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i></a>
+    <a href="#" class="w3-bar-item w3-button"><i class="fa fa-globe"></i></a>
+  </div>
+</div>
+          
+          <div class="w3-panel ">
+            <!-- Title & Author card-->
+
+
+<div class="w3-container w3-padding-16">
+  <div style="width:80%">
+    <div class="w3-padding" style="text-align: right;">
+      
+      
+          <h1 class="no_toc w3-text-theme" style="font-weight: bold;">Markdown Style Test &amp; Cheatsheet</h1>
+          <h4 class="no_toc" style="font-style: italic;">
+            
+              <a href="https://github.com/dramoz" class="w3-hover-text-theme" style="text-decoration: none;">by Danilo Ramos</a>
+            
+          </h4>
+          <h6 class="no_toc" style="font-size: 0.9em; font-style: normal; color:gray;">
+            
+              <span>Apr  5, 2023</span>
+            </h6>
+      
+    </div>
+  </div>
+</div>
+
+<!-- TOC? -->
+<div class="w3-panel">
+  
+    <div class="w3-panel w3-border-top w3-border-bottom">
+      <details>
+        <summary class="w3-text-theme">Table of Contents</summary>
+        <div id="TOC-inline" class="toc_inline">
+          <ul>
+<li>
+<a href="#github-markdown-test">GitHub Markdown test</a><ul>
+<li>
+<a href="#headings">Headings</a><ul><li>
+<a href="#h3">H3</a><ul><li>
+<a href="#h4">H4</a><ul><li>
+<a href="#h5">H5</a><ul><li><a href="#h6-the-smallest-heading">H6 (The smallest heading)</a></li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li>
+<li><a href="#syntax-coloring">Syntax coloring</a></li>
+<li><a href="#tables">Table(s)</a></li>
+<li>
+<a href="#collapsable">Collapsable</a><ul><li><a href="#we-can-hide-anything-even-code">We can hide anything, even code!</a></li></ul>
+</li>
+</ul>
+</li>
+<li><a href="#images">Image(s)</a></li>
+<li><a href="#lists">Lists</a></li>
+<li><a href="#emoji">Emoji</a></li>
+<li><a href="#footnotes">Footnotes</a></li>
+<li>
+<a href="#spaechip-plugin">Spaechip plugin</a><ul>
+<li><a href="#math">Math</a></li>
+<li><a href="#mermaid">Mermaid</a></li>
+<li><a href="#video">Video</a></li>
+</ul>
+</li>
+</ul>
+        </div>
+      </details>
+    </div>
+  
+<!-- Content -->
+  <h1 id="github-markdown-test">GitHub Markdown test</h1>
+
+<hr>
+
+<h2 id="headings">Headings</h2>
+
+<blockquote>
+  <p>A quote…</p>
+</blockquote>
+
+<h3 id="h3">H3</h3>
+
+<h4 id="h4">H4</h4>
+
+<h5 id="h5">H5</h5>
+
+<h6 id="h6-the-smallest-heading">H6 (The smallest heading)</h6>
+
+<hr>
+
+<h2 id="syntax-coloring">Syntax coloring</h2>
+
+<pre><code class="language-cpp">#pragma once
+#include "Header.h" // Contains ISomeClass and includes &lt;vector&gt;, &lt;list&gt;
+#define PREPROCESSOR_DEFINITION
+
+namespace MyNamespace
+{
+void GlobalFunction() {}
+bool GlobalVariable = true;
+/// &lt;summary&gt;
+/// The quick brown fox jumps over the lazy dog
+/// THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG
+/// &lt;/summary&gt;
+class SomeClass    : public ISomeClass
+{
+public:
+    enum SomeEnum
+    {
+        ENUM_0 = 0,
+        ENUM_1 = 1
+    };
+    struct SomeData
+    {
+        int m_Integer;
+        float m_Float;
+    };
+
+    SomeClass() { m_Data = new SomeData(); }
+    ~SomeClass() { delete m_Data; m_Data = 0; }
+
+    static int DoSomethingStatic( int _Arg0, float _Arg1 )
+    {
+        std::vector&lt;float&gt; Vec = std::vector&lt;float&gt;();
+        
+        float f = 0.0f;
+        for (int i = 0; i &lt; _Arg0; ++i)
+        {
+            if (i % 3 != 0)
+            {
+                f += _Arg1;
+                Vec.push_back(f);
+            }
+        }
+        return Vec.size();
+    }
+
+    template&lt;class _T&gt;
+    int DoSomethingNonStatic() const;
+private:
+    SomeData* m_Data;
+    static SomeData* m_StaticData;
+};
+
+}    // MyNamespace
+
+</code></pre>
+
+<pre><code class="language-python">class Person:
+  def __init__(mysillyobject, name, age):
+    mysillyobject.name = name
+    mysillyobject.age = age
+
+  def myfunc(abc):
+    print("Hello my name is " + abc.name)
+
+p1 = Person("John", 36)
+p1.myfunc()
+</code></pre>
+
+<hr>
+
+<h2 id="tables">Table(s)</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Command</th>
+      <th style="text-align: center">Description</th>
+      <th style="text-align: right">Aligment left</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><code>git status</code></td>
+      <td style="text-align: center">List all <em>new or modified</em> files</td>
+      <td style="text-align: right">left</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code>git diff</code></td>
+      <td style="text-align: center">Show file differences that <strong>haven’t been</strong> staged</td>
+      <td style="text-align: right">left</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr>
+
+<h2 id="collapsable">Collapsable</h2>
+
+<details> <summary>CLICK ME</summary>
+
+<div>
+
+    <h4 id="we-can-hide-anything-even-code">We can hide anything, even code!</h4>
+
+    <pre><code class="language-cpp">int main(int argc, char* argv[]) {
+    return 0;
+}
+</code></pre>
+
+  </div>
+</details>
+
+<hr>
+
+<h2 id="images">Image(s)</h2>
+
+<p><img src="https://myoctocat.com/assets/images/base-octocat.svg" alt="This is an image" height="128px" width="64px"></p>
+
+<p><img src="assets/img/avatar.png" alt="Avatar" height="128px"></p>
+
+<hr>
+
+<h2 id="lists">Lists</h2>
+
+<ol>
+  <li>A</li>
+  <li>B</li>
+  <li>C</li>
+</ol>
+
+<ul>
+  <li>A</li>
+  <li>B</li>
+  <li>C</li>
+</ul>
+
+<ol>
+  <li>a
+    <ol>
+      <li>b</li>
+      <li>c</li>
+    </ol>
+  </li>
+</ol>
+
+<hr>
+
+<h2 id="emoji">Emoji</h2>
+
+<p><img class="emoji" title=":+1:" alt=":+1:" raw="👍" src="https://github.githubassets.com/images/icons/emoji/unicode/1f44d.png" style="vertical-align: middle; display: inline; max-width: 1em; visibility: hidden;" onload="this.style.visibility='visible'" onerror="this.replaceWith(this.getAttribute('raw'))">with text<img class="emoji" title=":rocket:" alt=":rocket:" raw="🚀" src="https://github.githubassets.com/images/icons/emoji/unicode/1f680.png" style="vertical-align: middle; display: inline; max-width: 1em; visibility: hidden;" onload="this.style.visibility='visible'" onerror="this.replaceWith(this.getAttribute('raw'))"></p>
+
+<hr>
+
+<h2 id="footnotes">Footnotes</h2>
+
+<p>Here is a simple footnote<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>.</p>
+
+<p>A footnote can also have multiple lines<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup>.</p>
+
+<p>You can also use words, to fit your writing style more closely[^note].</p>
+
+<p>This allows you to have a footnote with multiple lines.
+[^note]:
+    Named footnotes will still render with numbers instead of the text but allow easier identification and linking.<br>
+    This footnote also has been made with a different syntax using 4 spaces for new lines.</p>
+
+<hr>
+
+<h2 id="spaechip-plugin">Spaechip plugin</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center" colspan="3">MathJax || Image</th>
+      
+      
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">Apple
+<br>
+Banana
+<br>
+Orange</td>
+      <td style="text-align: center">Apple
+<br>
+Banana
+<br>
+Orange</td>
+      <td style="text-align: left">Apple
+<br>
+Banana
+<br>
+Orange</td>
+    </tr>
+    
+    
+    <tr>
+      <td style="text-align: center" colspan="2" rowspan="4">Rowspan is 4
+<br>
+A. Peach
+<br>
+B. Orange
+<br>
+C. Banana</td>
+      <td style="text-align: center">How’s it?</td>
+      
+    </tr>
+    <tr>
+      
+      <td style="text-align: left" rowspan="2">
+<ol>
+  <li>
+<img src="https://jekyllrb.com/img/octojekyll.png" alt="example" height="36px" width="36px">
+<br>
+</li>
+  <li>$I = \int \rho R^{2} dV$</li>
+</ol>
+</td>
+      
+    </tr>
+    <tr>
+      
+      
+      
+    </tr>
+    <tr>
+      
+      <td style="text-align: left"><strong>It’s OK!</strong></td>
+      
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="math">Math</h3>
+
+<p>This sentence uses <code>$</code> delimiters to show math inline:  $\sqrt{3x-1}+(1+x)^2$</p>
+
+<p><strong>The Cauchy-Schwarz Inequality</strong></p>
+
+<p>$$
+\left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)
+$$</p>
+
+<h3 id="mermaid">Mermaid</h3>
+
+<p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiZ3JhcGggVEQ7XG5BLS0-QjtcbkEtLT5DO1xuQi0tPkQ7XG5DLS0-RDsiLCJtZXJtYWlkIjpudWxsfQ"></p>
+
+<p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiZ2FudHRcbmRhdGVGb3JtYXQgIFlZWVktTU0tRERcbnRpdGxlIEFkZGluZyBHQU5UVCBkaWFncmFtIHRvIG1lcm1haWRcbmV4Y2x1ZGVzIHdlZWtkYXlzIDIwMTQtMDEtMTBcbiUlLVxuc2VjdGlvbiBBIHNlY3Rpb25cbkNvbXBsZXRlZCB0YXNrICAgICAgICAgICAgOmRvbmUsICAgIGRlczEsIDIwMTQtMDEtMDYsMjAxNC0wMS0wOFxuQWN0aXZlIHRhc2sgICAgICAgICAgICAgICA6YWN0aXZlLCAgZGVzMiwgMjAxNC0wMS0wOSwgM2RcbkZ1dHVyZSB0YXNrICAgICAgICAgICAgICAgOiAgICAgICAgIGRlczMsIGFmdGVyIGRlczIsIDVkXG5GdXR1cmUgdGFzazIgICAgICAgICAgICAgICA6ICAgICAgICAgZGVzNCwgYWZ0ZXIgZGVzMywgNWQiLCJtZXJtYWlkIjpudWxsfQ"></p>
+
+<h3 id="video">Video</h3>
+
+<p><iframe id="media-Ptk_1Dc2iPY" class="media" src="https://www.youtube.com/embed/Ptk_1Dc2iPY" title="" width="100%" height="350" style="max-width: 600px;outline: none" allow="encrypted-media; picture-in-picture" frameborder="0" allowfullscreen></iframe></p>
+
+<hr>
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1" role="doc-endnote">
+      <p>My reference. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">↩</a></p>
+    </li>
+    <li id="fn:2" role="doc-endnote">
+      <p>Every new line should be prefixed with 2 spaces. <a href="#fnref:2" class="reversefootnote" role="doc-backlink">↩</a></p>
+    </li>
+  </ol>
+</div>
+
+  
+</div>
+
+          </div>
+          
+          <!-- Footer -->
+
+
+<div class="w3-bottom">
+  <div class="w3-bar w3-theme-l4">
+    <a href="#" class="w3-bar-item w3-button" title="top">
+      <i class="fa-solid fa-angles-up"></i>
+    
+    </a><a href="#" class="w3-bar-item w3-button" title="about">
+      <i class="fa-solid fa-address-card"></i>
+    
+    </a><a href="" class="w3-bar-item w3-button">
+      <i class="fa-regular fa-copyright"></i> Copyright 2023 - Danilo Ramos
+    </a>
+  </div>
+</div>
+
+        </div>
+        
+      </div>
+    </div>
+  </body>
+</html>

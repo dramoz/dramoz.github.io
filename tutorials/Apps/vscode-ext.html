@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <title>
+    Danilo Ramos, MSc, P.Eng.
+  </title>
+  
+  <!-- https://github.com/jekyll/jekyll-seo-tag --><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Visual Code Extension - Notes | Danilo Ramos, MSc, P.Eng.</title>
+<meta name="generator" content="Jekyll v4.2.2">
+<meta property="og:title" content="Visual Code Extension - Notes">
+<meta property="og:locale" content="en_CA">
+<meta name="description" content="[TOC]">
+<meta property="og:description" content="[TOC]">
+<link rel="canonical" href="https://dramoz.github.io/tutorials/Apps/vscode-ext">
+<meta property="og:url" content="https://dramoz.github.io/tutorials/Apps/vscode-ext">
+<meta property="og:site_name" content="Danilo Ramos, MSc, P.Eng.">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2023-04-05T18:07:36+00:00">
+<meta name="twitter:card" content="summary">
+<meta property="twitter:title" content="Visual Code Extension - Notes">
+<meta name="twitter:site" content="@dramoz1977">
+<meta name="google-site-verification" content="google-site-verification=e8PlCoi0UOY5SGE60r1luNuxmYoKY_XI9va3CGm_oQg">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-04-05T18:04:13+00:00","datePublished":"2023-04-05T18:07:36+00:00","description":"[TOC]","headline":"Visual Code Extension - Notes","mainEntityOfPage":{"@type":"WebPage","@id":"https://dramoz.github.io/tutorials/Apps/vscode-ext"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://dramoz.github.io/assets/img/avatar.png"}},"url":"https://dramoz.github.io/tutorials/Apps/vscode-ext"}</script>
+<!-- End Jekyll SEO tag -->
+<!-- W3.css -->
+  <link rel="stylesheet" href="https://dramoz.github.io/assets/css/style.css">
+  <!-- Note: this is done at style.scss level <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
+  <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-teal.css">
+  <!--<link rel="stylesheet" href="https://www.w3schools.com/lib/.css">-->
+  <script src="https://www.w3schools.com/lib/w3.js"></script> 
+  
+  <!-- Select the font -->
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans">
+  <style>
+    body,h1,h2,h3,h4,h5,h6 {font-family: 'Open Sans', sans-serif;;}
+  </style>
+  
+  <!-- Code highlight -->
+  <!-- https://highlightjs.org/download/ -->
+  <!-- https://jojozhuang.github.io/tutorial/jekyll-highlighting/ -->
+  
+    <link rel="stylesheet" href="https://highlightjs.org/static/demo/styles/atom-one-dark-reasonable.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
+    <script src="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.js"></script>
+    <script>
+      hljs.addPlugin(new CopyButtonPlugin());
+      hljs.highlightAll();
+    </script>
+    
+    <!-- Line numbers -->
+    <!-- https://github.com/wcoder/highlightjs-line-numbers.js/ -->
+    <script src="//cdn.jsdelivr.net/npm/highlightjs-line-numbers.js@2.8.0/dist/highlightjs-line-numbers.min.js"></script>
+    <script>hljs.initLineNumbersOnLoad();</script>
+    
+  
+  <!--load all Font Awesome styles -->
+  <link href="/assets/fontawesome/css/all.css" rel="stylesheet">
+  
+  <!-- https://realfavicongenerator.net/ -->
+
+<link rel="apple-touch-icon" sizes="180x180" href="https://dramoz.github.io/assets/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://dramoz.github.io/assets/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://dramoz.github.io/assets/favicons/favicon-16x16.png">
+<link rel="manifest" href="https://dramoz.github.io/assets/favicons/site.webmanifest">
+<link rel="mask-icon" href="https://dramoz.github.io/assets/favicons/safari-pinned-tab.svg">
+<link rel="shortcut icon" href="https://dramoz.github.io/assets/favicons/favicon.ico">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-config" content="https://dramoz.github.io/assets/favicons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+<!-- https://desiredpersona.com/google-analytics-jekyll/ --><!-- from minima -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=%7B" id>nil, "pv"=>{"proxy_endpoint"=>nil}}"></script>
+<script>
+  window['ga-disable-{"id"=>nil, "pv"=>{"proxy_endpoint"=>nil}}'] = window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1";
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){window.dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', '{"id"=>nil, "pv"=>{"proxy_endpoint"=>nil}}');
+</script>
+
+</head>
+<body>
+    
+    <!-- Sidebar -->
+
+
+
+
+<div class="w3-sidebar w3-theme-d2 w3-card-4 w3-animate-left" style="width: 360px; display: block;" id="mySidebar">
+  <div class="w3-bar w3-theme-dark">
+    <button class="w3-bar-item w3-button" onclick="selectSidebarOption('SiteMap')" title="site map">
+      <i class="fa-solid fa-sitemap"></i>
+    </button>
+    <button class="w3-bar-item w3-button" onclick="selectSidebarOption('TOC')" title="table of contents">
+      <i class="fa-solid fa-table-list"></i>
+    </button>
+    <button class="w3-bar-item w3-button w3-right" onclick="sidebarClose()" title="close Sidebar">
+      <i class="fa-solid fa-angles-left"></i>
+    </button>
+  </div>
+  
+  
+  <div id="TOC" class="sidebar_sel toc_sidebar" style="display:block">
+    <div class="w3-bar-item w3-theme-d3 w3-card">
+      Visual Code Extension - Notes
+    </div>
+    <div class="w3-bar-item w3-padding-16 w3-theme-d2">
+      <ul><li>
+<a href="#visual-code-extensions---notes">Visual Code Extensions - Notes</a><ul><li><a href="#setup-environment">Setup environment</a></li></ul>
+</li></ul>
+    </div>
+  </div>
+  
+  <div id="SiteMap" class="sidebar_sel sitemap_sidebar" style="display:none">
+    <div class="sidebar_logo">
+      <a href="/" style="text-decoration: none;">
+        <img src="/assets/img/avatar.png" alt="logo" onerror="this.style.display='none'" class="sidebar_logo">
+        <div style="text-align: center;">Danilo Ramos, MSc, P.Eng.</div>
+        <div class="w3-small" style="text-align: center; font-style: italic;">Embedded Systems Design, Tutorials, Projects and Guides</div>
+      </a>
+    </div>
+    
+<!-- Sitemap TOC -->
+
+<div class="sitemap_toc">
+  
+<button onclick="sitemapAccordion('Blogs')"><i class="fa-solid fa-folder " id="Blogs_i"></i> Blogs</button>
+<div id="Blogs" class="w3-hide">
+<a href="/blogs/markdown_test.html" title="Markdown Style Test &amp; Cheatsheet"><i class="fa-solid fa-link"></i> Markdown Style Test &amp; Cheatsheet</a>
+<a href="/blogs/workstation_requirements.html" title="Workstation Requirements"><i class="fa-solid fa-computer"></i> Workstation Requirements</a>
+</div>
+
+
+<button onclick="sitemapAccordion('Tutorials')"><i class="fa-solid fa-folder " id="Tutorials_i"></i> Tutorials</button>
+<div id="Tutorials" class="w3-hide">
+
+<button onclick="sitemapAccordion('Apps')"><i class="fa-solid fa-folder " id="Apps_i"></i> Apps</button>
+<div id="Apps" class="w3-hide">
+<a href="/tutorials/Apps/calibre_ebook_manager-install.html" title="eBooks with Calibre e-book management, OneDrive and Android"><i class="fa-solid fa-link"></i> eBooks with Calibre e-book management, OneDrive and Android</a>
+</div>
+
+
+<button onclick="sitemapAccordion('OS')"><i class="fa-solid fa-folder " id="OS_i"></i> OS</button>
+<div id="OS" class="w3-hide">
+<a href="/tutorials/OS/virtualbox-install.html" title="VirtualBox Install and Setup"><i class="fa-solid fa-link"></i> VirtualBox Install and Setup</a>
+
+<button onclick="sitemapAccordion('Ubuntu')"><i class="fa-solid fa-folder " id="Ubuntu_i"></i> Ubuntu</button>
+<div id="Ubuntu" class="w3-hide">
+<a href="/tutorials/OS/Ubuntu/ubuntu-install.html" title="Ubuntu 20.04 Install and Setup"><i class="fa-brands fa-ubuntu"></i> Ubuntu 20.04 Install and Setup</a>
+</div>
+
+</div>
+
+
+<button onclick="sitemapAccordion('Tools')"><i class="fa-solid fa-folder " id="Tools_i"></i> Tools</button>
+<div id="Tools" class="w3-hide">
+<a href="/tutorials/Tools/jekyll-github-pages.html" title="GitHub Pages with Jekyll, W3.CSS and Python"><i class="fa-solid fa-link"></i> GitHub Pages with Jekyll, W3.CSS and Python</a>
+<a href="/tutorials/Tools/vs-code-install.html" title="Visual Studio Code Setup"><i class="fa-solid fa-link"></i> Visual Studio Code Setup</a>
+</div>
+
+</div>
+
+
+<button onclick="sitemapAccordion('Projects')"><i class="fa-solid fa-folder " id="Projects_i"></i> Projects</button>
+<div id="Projects" class="w3-hide">
+<a href="/projects/my_project.html" title="My First Project"><i class="fa-solid fa-link"></i> My First Project</a>
+</div>
+
+</div>
+  </div>
+</div>
+
+<!-- Sidebar scripts -->
+<script>
+  function sidebarOpen() {
+    document.getElementById("main").style.marginLeft = "360px";
+    document.getElementById("mySidebar").style.width = "360px";
+    document.getElementById("mySidebar").style.display = "block";
+    document.getElementById("openNav").style.display = 'none';
+  }
+  function sidebarClose() {
+    document.getElementById("main").style.marginLeft = "0";
+    document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("openNav").style.display = "inline-block";
+  }
+  function selectSidebarOption(sidebarOption) {
+    var i;
+    var x = document.getElementsByClassName("sidebar_sel");
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none";
+    }
+    document.getElementById(sidebarOption).style.display = "block";
+  }
+  function sitemapAccordion(id) {
+    var x = document.getElementById(id);
+    var xi = document.getElementById(id+"_i");
+    if (x.className.indexOf("w3-show") == -1) {
+      x.className += " w3-show";
+      xi.className = xi.className.replace("fa-solid fa-folder", "fa-solid fa-folder-open")
+    } else {
+      x.className = x.className.replace(" w3-show", "");
+      xi.className = xi.className.replace("fa-solid fa-folder-open", "fa-solid fa-folder")
+    }
+  }
+</script>
+
+    
+    <div id="main" style="margin-left: 360px;">
+      <div class="w3-container w3-theme-l5">
+        <!-- Sidebar open button -->
+        <div class="w3-top">
+          <button id="openNav" class="w3-bar-item w3-button" title="open Sidebar" style="display: none;" onclick="sidebarOpen()">
+            <i class="fa-solid fa-angles-right"></i>
+          </button>
+        </div>
+        
+        <!-- Page Content -->
+        <div class="w3-panel w3-auto">
+          <!-- Top Nav -->
+<div class="w3-top">
+  <div class="w3-bar w3-theme">
+    <!-- <a href="#" class="w3-bar-item w3-button">Visual Code Extension - Notes</a> -->
+    <a href="https://dramoz.github.io" class="w3-bar-item w3-button"><i class="fa fa-home"></i></a>
+    <a href="#" class="w3-bar-item w3-button"><i class="fa fa-search"></i></a>
+    <a href="#" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i></a>
+    <a href="#" class="w3-bar-item w3-button"><i class="fa fa-globe"></i></a>
+  </div>
+</div>
+          
+          <div class="w3-panel ">
+            <!-- Title & Author card-->
+
+
+<div class="w3-container w3-padding-16">
+  <div style="width:80%">
+    <div class="w3-padding" style="text-align: right;">
+      
+      
+          <h1 class="no_toc w3-text-theme" style="font-weight: bold;">Visual Code Extension - Notes</h1>
+          <h4 class="no_toc" style="font-style: italic;">
+            
+              <a href="https://github.com/dramoz" class="w3-hover-text-theme" style="text-decoration: none;">by Danilo Ramos</a>
+            
+          </h4>
+          <h6 class="no_toc" style="font-size: 0.9em; font-style: normal; color:gray;">
+            
+              <span>Apr  5, 2023</span>
+            </h6>
+      
+    </div>
+  </div>
+</div>
+
+<!-- TOC? -->
+<div class="w3-panel">
+  
+    <div class="w3-panel w3-border-top w3-border-bottom">
+      <details>
+        <summary class="w3-text-theme">Table of Contents</summary>
+        <div id="TOC-inline" class="toc_inline">
+          <ul><li>
+<a href="#visual-code-extensions---notes">Visual Code Extensions - Notes</a><ul><li><a href="#setup-environment">Setup environment</a></li></ul>
+</li></ul>
+        </div>
+      </details>
+    </div>
+  
+<!-- Content -->
+  <p>[TOC]</p>
+
+<h1 id="visual-code-extensions---notes">Visual Code Extensions - Notes</h1>
+
+<h2 id="setup-environment">Setup environment</h2>
+
+<pre><code class="language-bash"># Dependencies
+sudo snap install node --classic
+
+# VS code ext. generator
+npm install -g yo generator-code
+
+</code></pre>
+
+
+  
+</div>
+
+          </div>
+          
+          <!-- Footer -->
+
+
+<div class="w3-bottom">
+  <div class="w3-bar w3-theme-l4">
+    <a href="#" class="w3-bar-item w3-button" title="top">
+      <i class="fa-solid fa-angles-up"></i>
+    
+    </a><a href="#" class="w3-bar-item w3-button" title="about">
+      <i class="fa-solid fa-address-card"></i>
+    
+    </a><a href="" class="w3-bar-item w3-button">
+      <i class="fa-regular fa-copyright"></i> Copyright 2023 - Danilo Ramos
+    </a>
+  </div>
+</div>
+
+        </div>
+        
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <title>
+    Danilo Ramos, MSc, P.Eng.
+  </title>
+  
+  <!-- https://github.com/jekyll/jekyll-seo-tag --><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Ultrazed Eg | Danilo Ramos, MSc, P.Eng.</title>
+<meta name="generator" content="Jekyll v4.2.2">
+<meta property="og:title" content="Ultrazed Eg">
+<meta property="og:locale" content="en_CA">
+<meta name="description" content="Avnet UltraZed-EG Boards AES-ZU3EGES-1-SK-G (red) (Engineering Sample) AES-ZU-IOCC-G + XCZU3EG (black) ZU3EGES support was removed after Vivado 2017.x - use Avnet.com Getting Started UltraZed-EG element14 Site Base Project on Vivado Create Project Create Project Project name: noarm Project location: ~/dev/xilinx/vivado/2022.2/ultrazed-eg Create project subdirectory Project Type RTL Project Do not specify sources at this time Default Part Boards Vendor: avnet.com Name: Avnet UltraZed-3EG IO Carrier Card Board Rev: Latest (1.0) RTL IP INTEGRATOR (Block Design) Create Block Design (default settings) ➕ Add IP ctrl + i zynq $\rightarrow$ Zynq Ultrascale+ MPSoC Run Block Automation Apply Board Preset Add Peripherals as AXI-IO blocks Select from Block Design $\rightarrow$ Board For [DIP switches, LED, Push buttons] 🖰 Double Left Click ˅ Create new IP $\rightarrow$ ➕ AXI GPIO $\rightarrow$ GPIO Run Connection Automation (default 🆗) ⟳ Regenerate Layout 🗹 Validate Design F6 💾 Save ctrl + s Create HDL Wrapper Sources $\rightarrow$ Design Sources 🖰 Right click design_1 Create HDL Wrapper... ⦿ Let Vivado manage wrapper and auto-update 💾 Save ctrl + s Generate Files Generate Bitstream (default 🆗) Open Implemented Design Export Hardware Platform File $\rightarrow$ Export $\rightarrow$ Export Hardware... ⦿ Include bitstream XSA file name: ultrazed_eg_base.xsa Software Embedded Software Hierarchy in Vitis Launch Vitis Workspace: ${HOME}/dev/xilinx/vitis/2022.2/ultrazed_eg/base/workspace/ One workspace per project is required File $\rightarrow$ New &gt; Platform Project Name: ultrazed_eg Create a new platform from hardware (XSA) $\rightarrow$ Browse... Load ultrazed_eg_base.xsa default 🆗 OS: standalone CPU: psu_cortexa53_0 Arch: 64-bit Boot Components Generate boot components FSBL: ⦿ psu_cortexa53_0 File $\rightarrow$ New &gt; Application Project Select platform: ultrazed_eg Application project name: helloWorld Domain: standalone_domain helloworld.c: source file, modify as required 🖰 Right click helloWorld[standalone_domain] ˃ Debug As ˃ Debug Configurations Tab Main Connection: New Name: server Set as default target Host: ###.###.###.### (IP address) Click Advanced&gt;&gt; to review connection, as Test Connection occasionally fails Click OK on save even if unable to connect after Advanced&gt;&gt; is showing target Tab Target Setup Skip Revision Check (for ES target - Red PCB) ˃ Build Project ˃ Debug As ˃ Launch Hardware (Single Application Debug) Serial Port Monitor (Teraterm Putty) Two serial ports, select higher COM @115200 Troubleshooting Out of the Box UltraZed-EG not working (2017.Jan.30) IOCC does not come out of reset Remove JP1 on SOM (shunt) solved issue Cannot detect Ultrazed Board on host PC using UART and JTAG Unable to use JTAG SMT2 (micro USB) Only working with Xilinx Platform Cable USB II after several POR and USBII plug/unplug Apparently there was an issue with the IOCC boards that required several (only if SMT2 gets hot) An RMA was required for some production boards For JTAG connector it is required to set the following jumpers on the IOCC: Remove JP1 &amp; JP2 JP2 handles SD_WP (SD card write protect HW emulation) Set J1 &amp; J2 to default mode (1-2) JP1, J1 &amp; J2 manage IDT clock generation JP1 off, J1[1-2], J2[1-2] is default clocking strategy Cannot connect to the Ultrazed board using JTAG Solution ES device (RED board) To use ES device (RED board), on Vivado Tcl console set set_param xicom.use_bitstream_version_check false POR Connect PWR to board Connect Platform Cable to board Do NOT connect USB to PC Power up board (switch to ON) Connect USB to PC References Reference Link UltraZed SOM https://avnet.com/wps/portal/us/products/avnet-boards/avnet-board-families/ultrazed/ultrazed-eg/ultrazed-eg-board-family AES-ZU-IOCC-G (IO Carrier Card) https://www.avnet.com/shop/us/products/avnet-engineering-services/aes-zu-iocc-g-3074457345635221598/ UltraZed-EG element14 Site https://community.element14.com/products/devtools/avnetboardscommunity/w/boards/23082/ultrazed-eg Digilent JTAG SMT2 https://digilent.com/reference/programmers/jtag-smt2/reference-manual Embedded Software Hierarchy in Vitis https://ohwr.org/project/soc-course/wikis/Embedded-Software-Hierarchy-in-Vitis XDC (IOCC) set_property PACKAGE_PIN W1 [get_ports {gpio_rtl_0_tri_io0]}] set_property IOSTANDARD LVCMOS18 [get_ports {gpio_rtl_0_tri_io0]}] set_property IOSTANDARD LVCMOS18 [get_ports D5] set_property IOSTANDARD LVCMOS18 [get_ports SW1] set_property PACKAGE_PIN T4 [get_ports D5] set_property PACKAGE_PIN L2 [get_ports SW1] set_property PACKAGE_PIN R1 [get_ports SW3] set_property IOSTANDARD LVCMOS18 [get_ports SW3] set_property PACKAGE_PIN K2 [get_ports SW2] set_property IOSTANDARD LVCMOS18 [get_ports SW2] set_property PACKAGE_PIN U5 [get_ports D6] set_property IOSTANDARD LVCMOS18 [get_ports D6] set_property PACKAGE_PIN U6 [get_ports D7] set_property IOSTANDARD LVCMOS18 [get_ports D7] set_property PACKAGE_PIN T5 [get_ports {leds3]}] set_property IOSTANDARD LVCMOS18 [get_ports {leds3]}] set_property IOSTANDARD LVCMOS18 [get_ports {leds2]}] set_property IOSTANDARD LVCMOS18 [get_ports {leds1]}] set_property IOSTANDARD LVCMOS18 [get_ports {leds0]}] set_property PACKAGE_PIN T7 [get_ports {leds2]}] set_property PACKAGE_PIN T3 [get_ports {leds1]}] set_property PACKAGE_PIN U2 [get_ports {leds0]}]">
+<meta property="og:description" content="Avnet UltraZed-EG Boards AES-ZU3EGES-1-SK-G (red) (Engineering Sample) AES-ZU-IOCC-G + XCZU3EG (black) ZU3EGES support was removed after Vivado 2017.x - use Avnet.com Getting Started UltraZed-EG element14 Site Base Project on Vivado Create Project Create Project Project name: noarm Project location: ~/dev/xilinx/vivado/2022.2/ultrazed-eg Create project subdirectory Project Type RTL Project Do not specify sources at this time Default Part Boards Vendor: avnet.com Name: Avnet UltraZed-3EG IO Carrier Card Board Rev: Latest (1.0) RTL IP INTEGRATOR (Block Design) Create Block Design (default settings) ➕ Add IP ctrl + i zynq $\rightarrow$ Zynq Ultrascale+ MPSoC Run Block Automation Apply Board Preset Add Peripherals as AXI-IO blocks Select from Block Design $\rightarrow$ Board For [DIP switches, LED, Push buttons] 🖰 Double Left Click ˅ Create new IP $\rightarrow$ ➕ AXI GPIO $\rightarrow$ GPIO Run Connection Automation (default 🆗) ⟳ Regenerate Layout 🗹 Validate Design F6 💾 Save ctrl + s Create HDL Wrapper Sources $\rightarrow$ Design Sources 🖰 Right click design_1 Create HDL Wrapper... ⦿ Let Vivado manage wrapper and auto-update 💾 Save ctrl + s Generate Files Generate Bitstream (default 🆗) Open Implemented Design Export Hardware Platform File $\rightarrow$ Export $\rightarrow$ Export Hardware... ⦿ Include bitstream XSA file name: ultrazed_eg_base.xsa Software Embedded Software Hierarchy in Vitis Launch Vitis Workspace: ${HOME}/dev/xilinx/vitis/2022.2/ultrazed_eg/base/workspace/ One workspace per project is required File $\rightarrow$ New &gt; Platform Project Name: ultrazed_eg Create a new platform from hardware (XSA) $\rightarrow$ Browse... Load ultrazed_eg_base.xsa default 🆗 OS: standalone CPU: psu_cortexa53_0 Arch: 64-bit Boot Components Generate boot components FSBL: ⦿ psu_cortexa53_0 File $\rightarrow$ New &gt; Application Project Select platform: ultrazed_eg Application project name: helloWorld Domain: standalone_domain helloworld.c: source file, modify as required 🖰 Right click helloWorld[standalone_domain] ˃ Debug As ˃ Debug Configurations Tab Main Connection: New Name: server Set as default target Host: ###.###.###.### (IP address) Click Advanced&gt;&gt; to review connection, as Test Connection occasionally fails Click OK on save even if unable to connect after Advanced&gt;&gt; is showing target Tab Target Setup Skip Revision Check (for ES target - Red PCB) ˃ Build Project ˃ Debug As ˃ Launch Hardware (Single Application Debug) Serial Port Monitor (Teraterm Putty) Two serial ports, select higher COM @115200 Troubleshooting Out of the Box UltraZed-EG not working (2017.Jan.30) IOCC does not come out of reset Remove JP1 on SOM (shunt) solved issue Cannot detect Ultrazed Board on host PC using UART and JTAG Unable to use JTAG SMT2 (micro USB) Only working with Xilinx Platform Cable USB II after several POR and USBII plug/unplug Apparently there was an issue with the IOCC boards that required several (only if SMT2 gets hot) An RMA was required for some production boards For JTAG connector it is required to set the following jumpers on the IOCC: Remove JP1 &amp; JP2 JP2 handles SD_WP (SD card write protect HW emulation) Set J1 &amp; J2 to default mode (1-2) JP1, J1 &amp; J2 manage IDT clock generation JP1 off, J1[1-2], J2[1-2] is default clocking strategy Cannot connect to the Ultrazed board using JTAG Solution ES device (RED board) To use ES device (RED board), on Vivado Tcl console set set_param xicom.use_bitstream_version_check false POR Connect PWR to board Connect Platform Cable to board Do NOT connect USB to PC Power up board (switch to ON) Connect USB to PC References Reference Link UltraZed SOM https://avnet.com/wps/portal/us/products/avnet-boards/avnet-board-families/ultrazed/ultrazed-eg/ultrazed-eg-board-family AES-ZU-IOCC-G (IO Carrier Card) https://www.avnet.com/shop/us/products/avnet-engineering-services/aes-zu-iocc-g-3074457345635221598/ UltraZed-EG element14 Site https://community.element14.com/products/devtools/avnetboardscommunity/w/boards/23082/ultrazed-eg Digilent JTAG SMT2 https://digilent.com/reference/programmers/jtag-smt2/reference-manual Embedded Software Hierarchy in Vitis https://ohwr.org/project/soc-course/wikis/Embedded-Software-Hierarchy-in-Vitis XDC (IOCC) set_property PACKAGE_PIN W1 [get_ports {gpio_rtl_0_tri_io0]}] set_property IOSTANDARD LVCMOS18 [get_ports {gpio_rtl_0_tri_io0]}] set_property IOSTANDARD LVCMOS18 [get_ports D5] set_property IOSTANDARD LVCMOS18 [get_ports SW1] set_property PACKAGE_PIN T4 [get_ports D5] set_property PACKAGE_PIN L2 [get_ports SW1] set_property PACKAGE_PIN R1 [get_ports SW3] set_property IOSTANDARD LVCMOS18 [get_ports SW3] set_property PACKAGE_PIN K2 [get_ports SW2] set_property IOSTANDARD LVCMOS18 [get_ports SW2] set_property PACKAGE_PIN U5 [get_ports D6] set_property IOSTANDARD LVCMOS18 [get_ports D6] set_property PACKAGE_PIN U6 [get_ports D7] set_property IOSTANDARD LVCMOS18 [get_ports D7] set_property PACKAGE_PIN T5 [get_ports {leds3]}] set_property IOSTANDARD LVCMOS18 [get_ports {leds3]}] set_property IOSTANDARD LVCMOS18 [get_ports {leds2]}] set_property IOSTANDARD LVCMOS18 [get_ports {leds1]}] set_property IOSTANDARD LVCMOS18 [get_ports {leds0]}] set_property PACKAGE_PIN T7 [get_ports {leds2]}] set_property PACKAGE_PIN T3 [get_ports {leds1]}] set_property PACKAGE_PIN U2 [get_ports {leds0]}]">
+<link rel="canonical" href="https://dramoz.github.io/tutorials/Tools/Xilinx/UltraZed-EG">
+<meta property="og:url" content="https://dramoz.github.io/tutorials/Tools/Xilinx/UltraZed-EG">
+<meta property="og:site_name" content="Danilo Ramos, MSc, P.Eng.">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2023-04-05T18:07:36+00:00">
+<meta name="twitter:card" content="summary">
+<meta property="twitter:title" content="Ultrazed Eg">
+<meta name="twitter:site" content="@dramoz1977">
+<meta name="google-site-verification" content="google-site-verification=e8PlCoi0UOY5SGE60r1luNuxmYoKY_XI9va3CGm_oQg">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-04-05T18:04:13+00:00","datePublished":"2023-04-05T18:07:36+00:00","description":"Avnet UltraZed-EG Boards AES-ZU3EGES-1-SK-G (red) (Engineering Sample) AES-ZU-IOCC-G + XCZU3EG (black) ZU3EGES support was removed after Vivado 2017.x - use Avnet.com Getting Started UltraZed-EG element14 Site Base Project on Vivado Create Project Create Project Project name: noarm Project location: ~/dev/xilinx/vivado/2022.2/ultrazed-eg Create project subdirectory Project Type RTL Project Do not specify sources at this time Default Part Boards Vendor: avnet.com Name: Avnet UltraZed-3EG IO Carrier Card Board Rev: Latest (1.0) RTL IP INTEGRATOR (Block Design) Create Block Design (default settings) ➕ Add IP ctrl + i zynq $\\rightarrow$ Zynq Ultrascale+ MPSoC Run Block Automation Apply Board Preset Add Peripherals as AXI-IO blocks Select from Block Design $\\rightarrow$ Board For [DIP switches, LED, Push buttons] 🖰 Double Left Click ˅ Create new IP $\\rightarrow$ ➕ AXI GPIO $\\rightarrow$ GPIO Run Connection Automation (default 🆗) ⟳ Regenerate Layout 🗹 Validate Design F6 💾 Save ctrl + s Create HDL Wrapper Sources $\\rightarrow$ Design Sources 🖰 Right click design_1 Create HDL Wrapper... ⦿ Let Vivado manage wrapper and auto-update 💾 Save ctrl + s Generate Files Generate Bitstream (default 🆗) Open Implemented Design Export Hardware Platform File $\\rightarrow$ Export $\\rightarrow$ Export Hardware... ⦿ Include bitstream XSA file name: ultrazed_eg_base.xsa Software Embedded Software Hierarchy in Vitis Launch Vitis Workspace: ${HOME}/dev/xilinx/vitis/2022.2/ultrazed_eg/base/workspace/ One workspace per project is required File $\\rightarrow$ New &gt; Platform Project Name: ultrazed_eg Create a new platform from hardware (XSA) $\\rightarrow$ Browse... Load ultrazed_eg_base.xsa default 🆗 OS: standalone CPU: psu_cortexa53_0 Arch: 64-bit Boot Components Generate boot components FSBL: ⦿ psu_cortexa53_0 File $\\rightarrow$ New &gt; Application Project Select platform: ultrazed_eg Application project name: helloWorld Domain: standalone_domain helloworld.c: source file, modify as required 🖰 Right click helloWorld[standalone_domain] ˃ Debug As ˃ Debug Configurations Tab Main Connection: New Name: server Set as default target Host: ###.###.###.### (IP address) Click Advanced&gt;&gt; to review connection, as Test Connection occasionally fails Click OK on save even if unable to connect after Advanced&gt;&gt; is showing target Tab Target Setup Skip Revision Check (for ES target - Red PCB) ˃ Build Project ˃ Debug As ˃ Launch Hardware (Single Application Debug) Serial Port Monitor (Teraterm Putty) Two serial ports, select higher COM @115200 Troubleshooting Out of the Box UltraZed-EG not working (2017.Jan.30) IOCC does not come out of reset Remove JP1 on SOM (shunt) solved issue Cannot detect Ultrazed Board on host PC using UART and JTAG Unable to use JTAG SMT2 (micro USB) Only working with Xilinx Platform Cable USB II after several POR and USBII plug/unplug Apparently there was an issue with the IOCC boards that required several (only if SMT2 gets hot) An RMA was required for some production boards For JTAG connector it is required to set the following jumpers on the IOCC: Remove JP1 &amp; JP2 JP2 handles SD_WP (SD card write protect HW emulation) Set J1 &amp; J2 to default mode (1-2) JP1, J1 &amp; J2 manage IDT clock generation JP1 off, J1[1-2], J2[1-2] is default clocking strategy Cannot connect to the Ultrazed board using JTAG Solution ES device (RED board) To use ES device (RED board), on Vivado Tcl console set set_param xicom.use_bitstream_version_check false POR Connect PWR to board Connect Platform Cable to board Do NOT connect USB to PC Power up board (switch to ON) Connect USB to PC References Reference Link UltraZed SOM https://avnet.com/wps/portal/us/products/avnet-boards/avnet-board-families/ultrazed/ultrazed-eg/ultrazed-eg-board-family AES-ZU-IOCC-G (IO Carrier Card) https://www.avnet.com/shop/us/products/avnet-engineering-services/aes-zu-iocc-g-3074457345635221598/ UltraZed-EG element14 Site https://community.element14.com/products/devtools/avnetboardscommunity/w/boards/23082/ultrazed-eg Digilent JTAG SMT2 https://digilent.com/reference/programmers/jtag-smt2/reference-manual Embedded Software Hierarchy in Vitis https://ohwr.org/project/soc-course/wikis/Embedded-Software-Hierarchy-in-Vitis XDC (IOCC) set_property PACKAGE_PIN W1 [get_ports {gpio_rtl_0_tri_io0]}] set_property IOSTANDARD LVCMOS18 [get_ports {gpio_rtl_0_tri_io0]}] set_property IOSTANDARD LVCMOS18 [get_ports D5] set_property IOSTANDARD LVCMOS18 [get_ports SW1] set_property PACKAGE_PIN T4 [get_ports D5] set_property PACKAGE_PIN L2 [get_ports SW1] set_property PACKAGE_PIN R1 [get_ports SW3] set_property IOSTANDARD LVCMOS18 [get_ports SW3] set_property PACKAGE_PIN K2 [get_ports SW2] set_property IOSTANDARD LVCMOS18 [get_ports SW2] set_property PACKAGE_PIN U5 [get_ports D6] set_property IOSTANDARD LVCMOS18 [get_ports D6] set_property PACKAGE_PIN U6 [get_ports D7] set_property IOSTANDARD LVCMOS18 [get_ports D7] set_property PACKAGE_PIN T5 [get_ports {leds3]}] set_property IOSTANDARD LVCMOS18 [get_ports {leds3]}] set_property IOSTANDARD LVCMOS18 [get_ports {leds2]}] set_property IOSTANDARD LVCMOS18 [get_ports {leds1]}] set_property IOSTANDARD LVCMOS18 [get_ports {leds0]}] set_property PACKAGE_PIN T7 [get_ports {leds2]}] set_property PACKAGE_PIN T3 [get_ports {leds1]}] set_property PACKAGE_PIN U2 [get_ports {leds0]}]","headline":"Ultrazed Eg","mainEntityOfPage":{"@type":"WebPage","@id":"https://dramoz.github.io/tutorials/Tools/Xilinx/UltraZed-EG"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://dramoz.github.io/assets/img/avatar.png"}},"url":"https://dramoz.github.io/tutorials/Tools/Xilinx/UltraZed-EG"}</script>
+<!-- End Jekyll SEO tag -->
+<!-- W3.css -->
+  <link rel="stylesheet" href="https://dramoz.github.io/assets/css/style.css">
+  <!-- Note: this is done at style.scss level <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
+  <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-teal.css">
+  <!--<link rel="stylesheet" href="https://www.w3schools.com/lib/.css">-->
+  <script src="https://www.w3schools.com/lib/w3.js"></script> 
+  
+  <!-- Select the font -->
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans">
+  <style>
+    body,h1,h2,h3,h4,h5,h6 {font-family: 'Open Sans', sans-serif;;}
+  </style>
+  
+  <!-- Code highlight -->
+  <!-- https://highlightjs.org/download/ -->
+  <!-- https://jojozhuang.github.io/tutorial/jekyll-highlighting/ -->
+  
+    <link rel="stylesheet" href="https://highlightjs.org/static/demo/styles/atom-one-dark-reasonable.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
+    <script src="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.js"></script>
+    <script>
+      hljs.addPlugin(new CopyButtonPlugin());
+      hljs.highlightAll();
+    </script>
+    
+    <!-- Line numbers -->
+    <!-- https://github.com/wcoder/highlightjs-line-numbers.js/ -->
+    <script src="//cdn.jsdelivr.net/npm/highlightjs-line-numbers.js@2.8.0/dist/highlightjs-line-numbers.min.js"></script>
+    <script>hljs.initLineNumbersOnLoad();</script>
+    
+  
+  <!--load all Font Awesome styles -->
+  <link href="/assets/fontawesome/css/all.css" rel="stylesheet">
+  
+  <!-- https://realfavicongenerator.net/ -->
+
+<link rel="apple-touch-icon" sizes="180x180" href="https://dramoz.github.io/assets/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://dramoz.github.io/assets/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://dramoz.github.io/assets/favicons/favicon-16x16.png">
+<link rel="manifest" href="https://dramoz.github.io/assets/favicons/site.webmanifest">
+<link rel="mask-icon" href="https://dramoz.github.io/assets/favicons/safari-pinned-tab.svg">
+<link rel="shortcut icon" href="https://dramoz.github.io/assets/favicons/favicon.ico">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-config" content="https://dramoz.github.io/assets/favicons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+<!-- https://desiredpersona.com/google-analytics-jekyll/ --><!-- from minima -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=%7B" id>nil, "pv"=>{"proxy_endpoint"=>nil}}"></script>
+<script>
+  window['ga-disable-{"id"=>nil, "pv"=>{"proxy_endpoint"=>nil}}'] = window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1";
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){window.dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', '{"id"=>nil, "pv"=>{"proxy_endpoint"=>nil}}');
+</script>
+
+<script>MathJax={"tex":{"inlineMath":[["$","$"],["\\(","\\)"]],"displayMath":[["$$","$$"],["\\[","\\]"]]},"svg":{"fontCache":"global"}}</script><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    
+    <!-- Sidebar -->
+
+
+
+
+<div class="w3-sidebar w3-theme-d2 w3-card-4 w3-animate-left" style="width: 360px; display: block;" id="mySidebar">
+  <div class="w3-bar w3-theme-dark">
+    <button class="w3-bar-item w3-button" onclick="selectSidebarOption('SiteMap')" title="site map">
+      <i class="fa-solid fa-sitemap"></i>
+    </button>
+    <button class="w3-bar-item w3-button" onclick="selectSidebarOption('TOC')" title="table of contents">
+      <i class="fa-solid fa-table-list"></i>
+    </button>
+    <button class="w3-bar-item w3-button w3-right" onclick="sidebarClose()" title="close Sidebar">
+      <i class="fa-solid fa-angles-left"></i>
+    </button>
+  </div>
+  
+  
+  <div id="TOC" class="sidebar_sel toc_sidebar" style="display:block">
+    <div class="w3-bar-item w3-theme-d3 w3-card">
+      Ultrazed Eg
+    </div>
+    <div class="w3-bar-item w3-padding-16 w3-theme-d2">
+      <ul>
+<li>
+<a href="#avnet-ultrazed-eg">Avnet UltraZed-EG</a><ul><li>
+<a href="#boards"></a><a href="UltraZed%20Board%20Differences">Boards</a>
+</li></ul>
+</li>
+<li>
+<a href="#getting-started">Getting Started</a><ul><li>
+<a href="#base-project-on-vivado">Base Project on Vivado</a><ul>
+<li><a href="#create-project">Create Project</a></li>
+<li><a href="#rtl">RTL</a></li>
+<li><a href="#software">Software</a></li>
+</ul>
+</li></ul>
+</li>
+<li>
+<a href="#troubleshooting">Troubleshooting</a><ul><li>
+<a href="#solution">Solution</a><ul>
+<li><a href="#es-device-red-board">ES device (RED board)</a></li>
+<li><a href="#por">POR</a></li>
+</ul>
+</li></ul>
+</li>
+<li>
+<a href="#references">References</a><ul><li><a href="#xdc-iocc">XDC (IOCC)</a></li></ul>
+</li>
+</ul>
+    </div>
+  </div>
+  
+  <div id="SiteMap" class="sidebar_sel sitemap_sidebar" style="display:none">
+    <div class="sidebar_logo">
+      <a href="/" style="text-decoration: none;">
+        <img src="/assets/img/avatar.png" alt="logo" onerror="this.style.display='none'" class="sidebar_logo">
+        <div style="text-align: center;">Danilo Ramos, MSc, P.Eng.</div>
+        <div class="w3-small" style="text-align: center; font-style: italic;">Embedded Systems Design, Tutorials, Projects and Guides</div>
+      </a>
+    </div>
+    
+<!-- Sitemap TOC -->
+
+<div class="sitemap_toc">
+  
+<button onclick="sitemapAccordion('Blogs')"><i class="fa-solid fa-folder " id="Blogs_i"></i> Blogs</button>
+<div id="Blogs" class="w3-hide">
+<a href="/blogs/markdown_test.html" title="Markdown Style Test &amp; Cheatsheet"><i class="fa-solid fa-link"></i> Markdown Style Test &amp; Cheatsheet</a>
+<a href="/blogs/workstation_requirements.html" title="Workstation Requirements"><i class="fa-solid fa-computer"></i> Workstation Requirements</a>
+</div>
+
+
+<button onclick="sitemapAccordion('Tutorials')"><i class="fa-solid fa-folder " id="Tutorials_i"></i> Tutorials</button>
+<div id="Tutorials" class="w3-hide">
+
+<button onclick="sitemapAccordion('Apps')"><i class="fa-solid fa-folder " id="Apps_i"></i> Apps</button>
+<div id="Apps" class="w3-hide">
+<a href="/tutorials/Apps/calibre_ebook_manager-install.html" title="eBooks with Calibre e-book management, OneDrive and Android"><i class="fa-solid fa-link"></i> eBooks with Calibre e-book management, OneDrive and Android</a>
+</div>
+
+
+<button onclick="sitemapAccordion('OS')"><i class="fa-solid fa-folder " id="OS_i"></i> OS</button>
+<div id="OS" class="w3-hide">
+<a href="/tutorials/OS/virtualbox-install.html" title="VirtualBox Install and Setup"><i class="fa-solid fa-link"></i> VirtualBox Install and Setup</a>
+
+<button onclick="sitemapAccordion('Ubuntu')"><i class="fa-solid fa-folder " id="Ubuntu_i"></i> Ubuntu</button>
+<div id="Ubuntu" class="w3-hide">
+<a href="/tutorials/OS/Ubuntu/ubuntu-install.html" title="Ubuntu 20.04 Install and Setup"><i class="fa-brands fa-ubuntu"></i> Ubuntu 20.04 Install and Setup</a>
+</div>
+
+</div>
+
+
+<button onclick="sitemapAccordion('Tools')"><i class="fa-solid fa-folder " id="Tools_i"></i> Tools</button>
+<div id="Tools" class="w3-hide">
+<a href="/tutorials/Tools/jekyll-github-pages.html" title="GitHub Pages with Jekyll, W3.CSS and Python"><i class="fa-solid fa-link"></i> GitHub Pages with Jekyll, W3.CSS and Python</a>
+<a href="/tutorials/Tools/vs-code-install.html" title="Visual Studio Code Setup"><i class="fa-solid fa-link"></i> Visual Studio Code Setup</a>
+</div>
+
+</div>
+
+
+<button onclick="sitemapAccordion('Projects')"><i class="fa-solid fa-folder " id="Projects_i"></i> Projects</button>
+<div id="Projects" class="w3-hide">
+<a href="/projects/my_project.html" title="My First Project"><i class="fa-solid fa-link"></i> My First Project</a>
+</div>
+
+</div>
+  </div>
+</div>
+
+<!-- Sidebar scripts -->
+<script>
+  function sidebarOpen() {
+    document.getElementById("main").style.marginLeft = "360px";
+    document.getElementById("mySidebar").style.width = "360px";
+    document.getElementById("mySidebar").style.display = "block";
+    document.getElementById("openNav").style.display = 'none';
+  }
+  function sidebarClose() {
+    document.getElementById("main").style.marginLeft = "0";
+    document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("openNav").style.display = "inline-block";
+  }
+  function selectSidebarOption(sidebarOption) {
+    var i;
+    var x = document.getElementsByClassName("sidebar_sel");
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none";
+    }
+    document.getElementById(sidebarOption).style.display = "block";
+  }
+  function sitemapAccordion(id) {
+    var x = document.getElementById(id);
+    var xi = document.getElementById(id+"_i");
+    if (x.className.indexOf("w3-show") == -1) {
+      x.className += " w3-show";
+      xi.className = xi.className.replace("fa-solid fa-folder", "fa-solid fa-folder-open")
+    } else {
+      x.className = x.className.replace(" w3-show", "");
+      xi.className = xi.className.replace("fa-solid fa-folder-open", "fa-solid fa-folder")
+    }
+  }
+</script>
+
+    
+    <div id="main" style="margin-left: 360px;">
+      <div class="w3-container w3-theme-l5">
+        <!-- Sidebar open button -->
+        <div class="w3-top">
+          <button id="openNav" class="w3-bar-item w3-button" title="open Sidebar" style="display: none;" onclick="sidebarOpen()">
+            <i class="fa-solid fa-angles-right"></i>
+          </button>
+        </div>
+        
+        <!-- Page Content -->
+        <div class="w3-panel w3-auto">
+          <!-- Top Nav -->
+<div class="w3-top">
+  <div class="w3-bar w3-theme">
+    <!-- <a href="#" class="w3-bar-item w3-button">Ultrazed Eg</a> -->
+    <a href="https://dramoz.github.io" class="w3-bar-item w3-button"><i class="fa fa-home"></i></a>
+    <a href="#" class="w3-bar-item w3-button"><i class="fa fa-search"></i></a>
+    <a href="#" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i></a>
+    <a href="#" class="w3-bar-item w3-button"><i class="fa fa-globe"></i></a>
+  </div>
+</div>
+          
+          <div class="w3-panel ">
+            <!-- Title & Author card-->
+
+
+<div class="w3-container w3-padding-16">
+  <div style="width:80%">
+    <div class="w3-padding" style="text-align: right;">
+      
+      
+          <h1 class="no_toc w3-text-theme" style="font-weight: bold;">Ultrazed Eg</h1>
+          <h4 class="no_toc" style="font-style: italic;">
+            
+              <a href="https://github.com/dramoz" class="w3-hover-text-theme" style="text-decoration: none;">by Danilo Ramos</a>
+            
+          </h4>
+          <h6 class="no_toc" style="font-size: 0.9em; font-style: normal; color:gray;">
+            
+              <span>Apr  5, 2023</span>
+            </h6>
+      
+    </div>
+  </div>
+</div>
+
+<!-- TOC? -->
+<div class="w3-panel">
+  
+    <div class="w3-panel w3-border-top w3-border-bottom">
+      <details>
+        <summary class="w3-text-theme">Table of Contents</summary>
+        <div id="TOC-inline" class="toc_inline">
+          <ul>
+<li>
+<a href="#avnet-ultrazed-eg">Avnet UltraZed-EG</a><ul><li>
+<a href="#boards"></a><a href="UltraZed%20Board%20Differences">Boards</a>
+</li></ul>
+</li>
+<li>
+<a href="#getting-started">Getting Started</a><ul><li>
+<a href="#base-project-on-vivado">Base Project on Vivado</a><ul>
+<li><a href="#create-project">Create Project</a></li>
+<li><a href="#rtl">RTL</a></li>
+<li><a href="#software">Software</a></li>
+</ul>
+</li></ul>
+</li>
+<li>
+<a href="#troubleshooting">Troubleshooting</a><ul><li>
+<a href="#solution">Solution</a><ul>
+<li><a href="#es-device-red-board">ES device (RED board)</a></li>
+<li><a href="#por">POR</a></li>
+</ul>
+</li></ul>
+</li>
+<li>
+<a href="#references">References</a><ul><li><a href="#xdc-iocc">XDC (IOCC)</a></li></ul>
+</li>
+</ul>
+        </div>
+      </details>
+    </div>
+  
+<!-- Content -->
+  <h1 id="avnet-ultrazed-eg">Avnet UltraZed-EG</h1>
+
+<h2 id="boards"><a href="UltraZed%20Board%20Differences">Boards</a></h2>
+
+<ul>
+  <li>AES-ZU3EGES-1-SK-G (red) (Engineering Sample)</li>
+  <li>AES-ZU-IOCC-G + XCZU3EG (black)</li>
+</ul>
+
+<blockquote>
+  <p>ZU3EGES support was removed after Vivado 2017.x - use Avnet.com</p>
+</blockquote>
+
+<h1 id="getting-started">Getting Started</h1>
+
+<blockquote>
+  <p><a href="https://community.element14.com/products/devtools/avnetboardscommunity/w/boards/23082/ultrazed-eg">UltraZed-EG element14 Site</a></p>
+</blockquote>
+
+<h2 id="base-project-on-vivado">Base Project on Vivado</h2>
+
+<h3 id="create-project">Create Project</h3>
+
+<ol>
+  <li>
+    <p>Create Project</p>
+
+    <ul>
+      <li>Project name: <code>noarm</code>
+</li>
+      <li>Project location: <code>~/dev/xilinx/vivado/2022.2/ultrazed-eg</code>
+        <ul class="task-list">
+          <li class="task-list-item">
+<input type="checkbox" class="task-list-item-checkbox" disabled checked>Create project subdirectory</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Project Type</p>
+
+    <ul class="task-list">
+      <li class="task-list-item">
+<input type="checkbox" class="task-list-item-checkbox" disabled checked>RTL Project
+        <ul class="task-list">
+          <li class="task-list-item">
+<input type="checkbox" class="task-list-item-checkbox" disabled checked>Do not specify sources at this time</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Default Part</p>
+
+    <ul>
+      <li>
+        <p><strong>Boards</strong></p>
+
+        <p><em>Vendor</em>: avnet.com</p>
+
+        <p><em>Name</em>: Avnet UltraZed-3EG IO Carrier Card</p>
+
+        <p><em>Board Rev</em>: Latest (1.0)</p>
+      </li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="rtl">RTL</h3>
+
+<ol>
+  <li>
+    <p><strong>IP INTEGRATOR</strong> (Block Design)</p>
+
+    <ul>
+      <li>
+        <p>Create Block Design (default settings)</p>
+
+        <ol>
+          <li>
+            <p>➕ Add IP <code>ctrl + i</code></p>
+
+            <ul>
+              <li>
+                <p>zynq $\rightarrow$ <code>Zynq Ultrascale+ MPSoC</code></p>
+              </li>
+              <li>
+                <p>Run Block Automation</p>
+                <ul class="task-list">
+                  <li class="task-list-item">
+<input type="checkbox" class="task-list-item-checkbox" disabled checked>Apply Board Preset</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ol>
+      </li>
+      <li>
+        <p>Add Peripherals as AXI-IO blocks</p>
+
+        <ul>
+          <li>Select from Block Design $\rightarrow$ Board</li>
+          <li>For <code>[DIP switches, LED, Push buttons]</code>
+            <ul>
+              <li>🖰 Double Left Click
+                <ul>
+                  <li>˅ Create new IP $\rightarrow$  ➕ AXI GPIO $\rightarrow$ <code>GPIO</code>
+</li>
+                </ul>
+              </li>
+              <li>
+<code>Run Connection Automation</code>  (default 🆗)</li>
+            </ul>
+          </li>
+          <li>⟳ Regenerate Layout</li>
+          <li>🗹 Validate Design <code>F6</code>
+</li>
+          <li>💾 Save <code>ctrl + s</code>
+</li>
+        </ul>
+      </li>
+      <li>
+        <p>Create HDL Wrapper</p>
+        <ol>
+          <li>Sources $\rightarrow$ Design Sources</li>
+          <li>🖰 Right click <code>design_1</code>
+            <ul>
+              <li><code>Create HDL Wrapper...</code></li>
+              <li>⦿ Let Vivado manage wrapper and auto-update</li>
+            </ul>
+          </li>
+          <li>💾 Save <code>ctrl + s</code>
+</li>
+        </ol>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Generate Files</strong></p>
+
+    <ol>
+      <li>Generate Bitstream (default 🆗)
+        <ul>
+          <li><code>Open Implemented Design</code></li>
+        </ul>
+      </li>
+      <li>Export Hardware Platform
+        <ul>
+          <li>
+<code>File</code> $\rightarrow$ <code>Export</code> $\rightarrow$ <code>Export Hardware...</code>
+</li>
+          <li>⦿ Include bitstream</li>
+          <li>XSA file name: <code>ultrazed_eg_base.xsa</code>
+</li>
+        </ul>
+      </li>
+    </ol>
+  </li>
+</ol>
+
+<h3 id="software">Software</h3>
+
+<blockquote>
+  <p><a href="https://ohwr.org/project/soc-course/wikis/Embedded-Software-Hierarchy-in-Vitis">Embedded Software Hierarchy in Vitis</a></p>
+</blockquote>
+
+<ul>
+  <li>
+    <p>Launch Vitis</p>
+
+    <ul>
+      <li>
+        <p>Workspace: <code>${HOME}/dev/xilinx/vitis/2022.2/ultrazed_eg/base/workspace/</code></p>
+
+        <blockquote>
+          <p>One workspace per project is required</p>
+        </blockquote>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><code>File</code> $\rightarrow$ <code>New &gt; Platform Project</code></p>
+
+    <ul>
+      <li>
+        <p><code>Name</code>: ultrazed_eg</p>
+      </li>
+      <li>
+        <p>Create a new platform from hardware (XSA) $\rightarrow$ <code>Browse...</code></p>
+
+        <p>Load <em>ultrazed_eg_base.xsa</em></p>
+      </li>
+      <li>
+        <p>default 🆗</p>
+
+        <ul>
+          <li>
+            <p>OS: standalone</p>
+          </li>
+          <li>
+            <p>CPU: psu_cortexa53_0</p>
+          </li>
+          <li>
+            <p>Arch: 64-bit</p>
+          </li>
+          <li>
+            <p>Boot Components</p>
+
+            <ul class="task-list">
+              <li class="task-list-item">
+                <p><input type="checkbox" class="task-list-item-checkbox" disabled checked>Generate boot components</p>
+
+                <p>FSBL: ⦿ psu_cortexa53_0</p>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><code>File</code> $\rightarrow$ <code>New &gt; Application Project</code></p>
+
+    <ul>
+      <li>Select platform: <code>ultrazed_eg</code>
+</li>
+      <li>Application project name: helloWorld</li>
+      <li>Domain: standalone_domain</li>
+    </ul>
+  </li>
+  <li>
+    <p><code>helloworld.c</code>: source file, modify as required</p>
+  </li>
+  <li>
+    <p>🖰 Right click <code>helloWorld[standalone_domain]</code></p>
+
+    <p>˃ <code>Debug As</code> ˃ <code>Debug Configurations</code></p>
+
+    <ul>
+      <li>
+        <p><code>Tab</code> Main</p>
+
+        <ul>
+          <li>
+            <p>Connection: <code>New</code></p>
+
+            <p>Name: server</p>
+
+            <p>Set as default target</p>
+
+            <p>Host: ###.###.###.### (IP address)</p>
+
+            <blockquote>
+              <p>Click <code>Advanced&gt;&gt;</code> to review connection, as <code>Test Connection</code> occasionally fails</p>
+
+              <p>Click <code>OK</code> on save even if <code>unable to connect</code> after <code>Advanced&gt;&gt;</code> is showing target</p>
+            </blockquote>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p><code>Tab</code> Target Setup</p>
+
+        <ul class="task-list">
+          <li class="task-list-item">
+<input type="checkbox" class="task-list-item-checkbox" disabled checked>Skip Revision Check (for ES target - Red PCB)</li>
+        </ul>
+      </li>
+    </ul>
+
+    <p>˃ Build Project</p>
+
+    <p>˃ <code>Debug As</code> ˃ <code>Launch Hardware (Single Application Debug)</code></p>
+
+    <blockquote>
+      <table>
+        <tbody>
+          <tr>
+            <td>Serial Port Monitor (Teraterm</td>
+            <td>Putty)</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>Two serial ports, select higher COM @115200</p>
+    </blockquote>
+  </li>
+</ul>
+
+<h1 id="troubleshooting">Troubleshooting</h1>
+
+<p><strong><a href="https://community.element14.com/products/devtools/avnetboardscommunity/avnetboard-forums/f/ultrazed-hardware-design/37737/out-of-the-box-ultrazed-eg-not-working/137166">Out of the Box UltraZed-EG not working (2017.Jan.30)</a></strong></p>
+
+<ul>
+  <li>IOCC does not come out of reset</li>
+</ul>
+
+<blockquote>
+  <p>Remove JP1 on SOM (shunt) solved issue</p>
+</blockquote>
+
+<p><strong><a href="https://community.element14.com/products/devtools/avnetboardscommunity/avnetboard-forums/f/ultrazed-hardware-design/36288/cannot-detect-ultrazed-board-on-host-pc-using-uart-and-jtag/204249">Cannot detect Ultrazed Board on host PC using UART and JTAG</a></strong></p>
+
+<ul>
+  <li>Unable to use JTAG SMT2 (micro USB)</li>
+  <li>Only working with Xilinx Platform Cable USB II after several POR and USBII plug/unplug</li>
+</ul>
+
+<blockquote>
+  <p>Apparently there was an issue with the IOCC boards that required several (only if SMT2 gets hot)</p>
+
+  <p>An RMA was required for some production boards</p>
+</blockquote>
+
+<blockquote>
+  <p>For JTAG connector it is required to set the following jumpers on the IOCC:</p>
+
+  <ul>
+    <li>Remove JP1 &amp; <del>JP2</del>
+      <ul>
+        <li>JP2 handles SD_WP (SD card write protect HW emulation)</li>
+      </ul>
+    </li>
+    <li>Set J1 &amp; J2 to default mode (1-2)
+      <ul>
+        <li>JP1, J1 &amp; J2 manage IDT clock generation</li>
+        <li>JP1 off, J1[1-2], J2[1-2] is default clocking strategy</li>
+      </ul>
+    </li>
+  </ul>
+
+  <p><a href="https://community.element14.com/products/devtools/avnetboardscommunity/avnetboard-forums/f/ultrazed-hardware-design/36239/cannot-connect-to-the-ultrazed-board-using-jtag/131003">Cannot connect to the Ultrazed board using JTAG</a></p>
+</blockquote>
+
+<h2 id="solution">Solution</h2>
+
+<h3 id="es-device-red-board">ES device (RED board)</h3>
+
+<p>To use ES device (RED board), on Vivado Tcl console set</p>
+
+<pre><code class="language-tcl">set_param xicom.use_bitstream_version_check false
+</code></pre>
+
+<h3 id="por">POR</h3>
+
+<ol>
+  <li>
+    <p>Connect PWR to board</p>
+  </li>
+  <li>
+    <p>Connect Platform Cable to board</p>
+
+    <blockquote>
+      <p>Do NOT connect USB to PC</p>
+    </blockquote>
+  </li>
+  <li>Power up board (switch to ON)</li>
+  <li>Connect USB to PC</li>
+</ol>
+
+<h1 id="references">References</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Reference</th>
+      <th>Link</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="https://avnet.com/wps/portal/us/products/avnet-boards/avnet-board-families/ultrazed/ultrazed-eg/ultrazed-eg-board-family">UltraZed SOM</a></td>
+      <td>https://avnet.com/wps/portal/us/products/avnet-boards/avnet-board-families/ultrazed/ultrazed-eg/ultrazed-eg-board-family</td>
+    </tr>
+    <tr>
+      <td><a href="https://www.avnet.com/shop/us/products/avnet-engineering-services/aes-zu-iocc-g-3074457345635221598/">AES-ZU-IOCC-G (IO Carrier Card)</a></td>
+      <td>https://www.avnet.com/shop/us/products/avnet-engineering-services/aes-zu-iocc-g-3074457345635221598/</td>
+    </tr>
+    <tr>
+      <td><a href="https://community.element14.com/products/devtools/avnetboardscommunity/w/boards/23082/ultrazed-eg">UltraZed-EG element14 Site</a></td>
+      <td>https://community.element14.com/products/devtools/avnetboardscommunity/w/boards/23082/ultrazed-eg</td>
+    </tr>
+    <tr>
+      <td><a href="https://digilent.com/reference/programmers/jtag-smt2/reference-manual">Digilent JTAG SMT2</a></td>
+      <td>https://digilent.com/reference/programmers/jtag-smt2/reference-manual</td>
+    </tr>
+    <tr>
+      <td><a href="https://ohwr.org/project/soc-course/wikis/Embedded-Software-Hierarchy-in-Vitis">Embedded Software Hierarchy in Vitis</a></td>
+      <td>https://ohwr.org/project/soc-course/wikis/Embedded-Software-Hierarchy-in-Vitis</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="xdc-iocc">XDC (IOCC)</h3>
+
+<pre><code class="language-tcl">set_property PACKAGE_PIN W1 [get_ports {gpio_rtl_0_tri_io0]}]
+set_property IOSTANDARD LVCMOS18 [get_ports {gpio_rtl_0_tri_io0]}]
+
+set_property IOSTANDARD LVCMOS18 [get_ports D5]
+set_property IOSTANDARD LVCMOS18 [get_ports SW1]
+
+set_property PACKAGE_PIN T4 [get_ports D5]
+set_property PACKAGE_PIN L2 [get_ports SW1]
+
+set_property PACKAGE_PIN R1 [get_ports SW3]
+set_property IOSTANDARD LVCMOS18 [get_ports SW3]
+set_property PACKAGE_PIN K2 [get_ports SW2]
+set_property IOSTANDARD LVCMOS18 [get_ports SW2]
+set_property PACKAGE_PIN U5 [get_ports D6]
+set_property IOSTANDARD LVCMOS18 [get_ports D6]
+set_property PACKAGE_PIN U6 [get_ports D7]
+set_property IOSTANDARD LVCMOS18 [get_ports D7]
+
+set_property PACKAGE_PIN T5 [get_ports {leds3]}]
+set_property IOSTANDARD LVCMOS18 [get_ports {leds3]}]
+set_property IOSTANDARD LVCMOS18 [get_ports {leds2]}]
+set_property IOSTANDARD LVCMOS18 [get_ports {leds1]}]
+set_property IOSTANDARD LVCMOS18 [get_ports {leds0]}]
+set_property PACKAGE_PIN T7 [get_ports {leds2]}]
+set_property PACKAGE_PIN T3 [get_ports {leds1]}]
+set_property PACKAGE_PIN U2 [get_ports {leds0]}]
+</code></pre>
+
+
+  
+</div>
+
+          </div>
+          
+          <!-- Footer -->
+
+
+<div class="w3-bottom">
+  <div class="w3-bar w3-theme-l4">
+    <a href="#" class="w3-bar-item w3-button" title="top">
+      <i class="fa-solid fa-angles-up"></i>
+    
+    </a><a href="#" class="w3-bar-item w3-button" title="about">
+      <i class="fa-solid fa-address-card"></i>
+    
+    </a><a href="" class="w3-bar-item w3-button">
+      <i class="fa-regular fa-copyright"></i> Copyright 2023 - Danilo Ramos
+    </a>
+  </div>
+</div>
+
+        </div>
+        
+      </div>
+    </div>
+  </body>
+</html>
